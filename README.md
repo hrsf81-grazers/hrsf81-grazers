@@ -4,10 +4,10 @@ Event HUD helps organizations run large in-person events, such as conferences, s
 
 ## Team
 
-  - teamMember
-  - teamMember
-  - teamMember
-  - teamMember
+Christine Wong
+Austin Sloane
+Laurent Frazier
+David Friedman
 
 ## Table of Contents
 
