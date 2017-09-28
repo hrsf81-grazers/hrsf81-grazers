@@ -1,6 +1,6 @@
-# Project Name
+# Event HUD (Heads-Up Display)
 
-> Pithy project description
+Event HUD helps organizations run large in-person events, such as conferences, smoothly by providing a well-managed and structured communication channel between all event staff members in order to effectively coordinate event activities and logistics during the course of the event.
 
 ## Team
 
