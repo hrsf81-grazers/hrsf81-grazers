@@ -8,8 +8,12 @@
     "node": ">=6.4.0"
   },
   "scripts": {
+<<<<<<< HEAD
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/server.js"
+=======
+    "test": "echo \"Error: no test specified\" && exit 1"
+>>>>>>> 4db978cc92ae94f62189d59017aa2e8a112ce919
   },
   "dependencies": {
   },
