@@ -37,7 +37,8 @@ Event HUD helps organizations run large in-person events, such as conferences, s
 
 From within the root directory:
 
-```sh
+```
+sh
 npm install -g bower
 npm install
 bower install
