@@ -1,13 +1,17 @@
 const express = require('express');
 const app = express();
+const server = require('http').Server(app);
 const port = process.env.PORT || '3000';
+
+const WebSocket = require('ws');
+const wss = new WebSocket.Server({ server });
+
 const bodyParser = require('body-parser');
 const event = require('./event');
 const group = require('./group');
 const user = require('./user');
 const message = require('./message');
 const stub = require('./stubData');
-
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../client/dist'));
 app.use(express.static(__dirname + '/../node_modules'));
@@ -15,6 +19,14 @@ app.use('/event', event);
 app.use('/group', group);
 app.use('/user', user);
 app.use('/message', message);
+
+wss.on('connection', (ws, req) => {
+  ws.on('message', msg => {
+    console.log(`Received ${msg}`);
+  });
+
+  ws.send('something');
+});
 
 app.route('/events')
   .get((req, res) => {
@@ -42,6 +54,5 @@ if ( module.parent ) {
 } else {
   app.listen(port, () => {
     console.log(`Event HUD server running on port ${port}`);
-  });  
+  });
 }
-
