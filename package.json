@@ -10,7 +10,8 @@
   "scripts": {
     "ng-dev": "webpack -d --watch",
     "build": "webpack",
-    "start": "webpack"
+    "start": "webpack",
+    "test": "mocha"
   },
   "dependencies": {
     "angular": "^1.6.6"
