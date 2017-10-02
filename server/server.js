@@ -1,12 +1,13 @@
-const http = require('http');
+const express = require('express');
+const app = express();
 const port = process.env.PORT || '3000';
+const bodyParser = require('body-parser');
+const stub = require('./stubData.js');
 
-const server = http.createServer((req, res) => {
-  res.status = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello Grazers!\n');
-});
+app.use(bodyParser.json());
+app.use(express.static(__dirname + '/../client/dist'));
 
-server.listen(port, () => {
-  console.log(`Test server running on port ${port}`);
+
+app.listen(port, () => {
+  console.log(`Event HUD server running on port ${port}`);
 });
