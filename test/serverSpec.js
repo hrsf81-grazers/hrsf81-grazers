@@ -1,6 +1,7 @@
 const expect = require('chai').expect;
 const server = require('../server/server.js');
 const supertest = require('supertest');
+const WebSocket = require('ws');
 
 const request = supertest.agent(server);
 
@@ -11,6 +12,27 @@ describe('Server Spec', function() {
       request
         .get('/')
         .expect(200, /Event HUD/, done);
+    });
+  });
+
+  describe('Websocket Interface', function () {
+    it('should establish a websocket connection', function (done) {
+      const ws = new WebSocket('ws://localhost:3000');
+      ws.on('open', () => {
+        expect(ws.readyState).to.equal(WebSocket.OPEN);
+        done();
+      });
+    });
+
+    it('should upgrade to a websocket connection', function (done) {
+      const ws = new WebSocket('ws://localhost:3000');
+      ws.on('headers', (headers, response) => {
+        expect(response.statusCode).to.equal(101);
+        expect(headers.connection).to.equal('Upgrade');
+        expect(headers.upgrade).to.equal('websocket');
+        expect(headers['sec-websocket-accept']).to.exist;
+        done();
+      });
     });
   });
 });
