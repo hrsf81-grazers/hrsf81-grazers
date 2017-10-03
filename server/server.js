@@ -36,6 +36,11 @@ app.get('/messages', (req, res) => {
   res.status(200).send(stub.messages);
 });
 
-app.listen(port, () => {
-  console.log(`Event HUD server running on port ${port}`);
-});
+if ( module.parent ) {
+  module.exports = app;
+} else {
+  app.listen(port, () => {
+    console.log(`Event HUD server running on port ${port}`);
+  });  
+}
+
