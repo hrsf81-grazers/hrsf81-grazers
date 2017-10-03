@@ -10,6 +10,7 @@ const stub = require('./stubData');
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../client/dist'));
+app.use(express.static(__dirname + '/../node_modules'));
 app.use('/event', event);
 app.use('/group', group);
 app.use('/user', user);
