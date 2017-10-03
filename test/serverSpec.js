@@ -7,7 +7,7 @@ const request = supertest.agent(server);
 describe('Server Spec', function() {
   describe('GET /', function () {
     it('should return the content of index.html', function (done) {
-      // just assume that if it contains an <input> tag its index.html
+      // For now just check that index.html has the title "Event HUD"
       request
         .get('/')
         .expect(200, /Event HUD/, done);
