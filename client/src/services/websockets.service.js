@@ -3,13 +3,11 @@ function websockets() {
 
   this.send = function(message) {
     this.socket.send(message);
-  }
+  };
 
-  this.receive = function() {
-    this.socket.addEventListener('message', event => {
-      console.log(`Message from the server ${event.data}`);
-    });
-  }
+  this.receive = function(callback) {
+    this.socket.addEventListener('message', callback);
+  };
 }
 
 module.exports = websockets;

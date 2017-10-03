@@ -29,21 +29,9 @@ router.route('/:eventId/groups')
   res.status(201).send(newGroupObj);
 });
 
-router.route('/:eventId/messages')
-  .get((req, res) => {
+router.get('/:eventId/messages', (req, res) => {
     const eventId = Number(req.params.eventId);
     res.status(200).send(stub.messages);
-  })
-  .post((req, res) => {
-    const recipients = req.body.toList;
-    const messageSends = recipients.map(recipient => {
-      return {
-        messageId: 5,
-        recipientType: recipient.type,
-        recipientId: recipient.id
-      }
-    });
-    res.status(201).send(messageSends);
   });
 
 router.get('/:eventId/users', (req, res) => {
