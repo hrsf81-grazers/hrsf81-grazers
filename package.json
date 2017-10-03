@@ -27,6 +27,7 @@
     "eslint-config-airbnb-base": "^12.0.1",
     "eslint-plugin-import": "^2.7.0",
     "mocha": "^3.5.3",
+    "supertest": "^3.0.0",
     "webpack": "^3.6.0"
   },
   "babel": {

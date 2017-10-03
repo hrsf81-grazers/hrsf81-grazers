@@ -7,6 +7,11 @@ const server = http.createServer((req, res) => {
   res.end('Hello Grazers!\n');
 });
 
-server.listen(port, () => {
-  console.log(`Test server running on port ${port}`);
-});
+
+if ( module.parent ) {
+  module.exports = server;
+} else {
+  server.listen(port, () => {
+    console.log(`Test server running on port ${port}`);
+  });  
+}
