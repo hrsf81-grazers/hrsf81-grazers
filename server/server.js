@@ -52,7 +52,7 @@ app.get('/messages', (req, res) => {
 if ( module.parent ) {
   module.exports = app;
 } else {
-  app.listen(port, () => {
+  server.listen(port, () => {
     console.log(`Event HUD server running on port ${port}`);
   });
 }
