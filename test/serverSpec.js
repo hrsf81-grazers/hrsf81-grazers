@@ -15,6 +15,20 @@ describe('Server Spec', function() {
     });
   });
 
+  describe('GET /event/:eventId/groups', function () {
+    it('should return the groups associated with an event', function (done) {
+      // For now just check that it returns something; when DB is hooked up, should confirm
+      // results match DB contents
+      request
+        .get('/event/1/groups')
+        .expect(res => {
+          if (res.body.length === 0) throw new Error('no results for groups');
+        })
+        .expect(200)
+        .end(done);
+    });
+  });
+
   describe('Websocket Interface', function () {
     it('should establish a websocket connection', function (done) {
       const ws = new WebSocket('ws://localhost:3000');

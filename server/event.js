@@ -3,7 +3,6 @@ const router = express.Router();
 const stub = require('./stubData.js');
 
 router.use((req, res, next) => {
-  console.log('Handing /event routes');
   next();
 });
 
