@@ -7,12 +7,26 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-
 }
 
-.left-sidebar, .right-sidebar {
+.control-panel {
+  background-color: pink;
+  height: 100vh;
+}
+
+.right-sidebar {
   background-color: grey;
   height: 100vh;
+}
+
+.control-panel-list {
+  padding: 0px;
+  list-style: none;
+}
+
+.control-panel-item:hover {
+  cursor: pointer;
+  color: blue;
 }
 
 .message-display {
