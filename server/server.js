@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const app = express();
 const server = require('http').Server(app);
@@ -32,6 +33,7 @@ wss.on('connection', (ws, req) => {
   });
 });
 
+
 app.route('/events')
   .get((req, res) => {
     res.status(200).send(stub.events);
@@ -51,6 +53,11 @@ app.get('/users', (req, res) => {
 
 app.get('/messages', (req, res) => {
   res.status(200).send(stub.messages);
+});
+
+// send back to client for route handling
+app.use('/*', (req, res) => {
+  res.sendFile(path.resolve('client/dist/index.html'));
 });
 
 if ( module.parent ) {
