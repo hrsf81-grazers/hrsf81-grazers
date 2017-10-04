@@ -1,0 +1,7 @@
+module.exports = {
+  template: `
+    <div class="container col-md-7">
+      <h3>Placeholder Manage Group Component</h3>
+  </div>
+  `
+};

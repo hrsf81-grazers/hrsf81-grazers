@@ -1,7 +1,7 @@
 module.exports = {
   controller: function(groups, websockets) {
     groups.get()
-    .then(groups => this.groups = groups.map(group => group.name))
+    .then(groups => this.groups = groups)
     .catch(console.error);
 
     this.clearInputs = function() {
@@ -26,7 +26,7 @@ module.exports = {
     <label for="compose-message-to">To</label>
     <form ng-submit="$ctrl.sendMessage()">
       <select id="group-select" class="form-input" required multiple ng-model="$ctrl.messageTo">
-        <option ng-repeat="group in $ctrl.groups track by $index">{{group}}</option>
+        <option ng-repeat="group in $ctrl.groups track by group.id" value="{{group.id}}">{{group.name}}</option>
       </select>
       <label for="compose-message-title">Message Title</label>
       <input id="compose-message-title" class="form-input" autocomplete="off" ng-model="$ctrl.messageTitle"/>
