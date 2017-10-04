@@ -1,5 +1,5 @@
 module.exports = {
   template: `
-    <manage-event></manage-event>
+    <sign-in class="sign-in"></sign-in>
 `
 };
