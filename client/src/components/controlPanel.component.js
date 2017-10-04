@@ -6,7 +6,7 @@ module.exports = {
     this.activeUser = 'Christine Wong';
     this.event = 'Grazers Con';
     groups.get()
-    .then(groups => this.groups = groups.map(group => group.name))
+    .then(groups => this.groups = groups)
     .catch(console.error);
   },
   template: `
@@ -14,8 +14,8 @@ module.exports = {
     <div class="active-user">{{$ctrl.activeUser}}</div>
     <ul class="control-panel-list">
       <control-panel-item label="$ctrl.event" view="broadcast" on-click="$ctrl.changeView"></control-panel-item>
-      <control-panel-item ng-repeat="group in $ctrl.groups track by $index"
-        label="group"
+      <control-panel-item ng-repeat="group in $ctrl.groups track by group.id"
+        label="group.name"
         view="manageGroup"
         on-click="$ctrl.changeView"></control-panel-item>
     </ul>
