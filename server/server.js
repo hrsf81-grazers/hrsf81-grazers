@@ -33,7 +33,6 @@ wss.on('connection', (ws, req) => {
   });
 });
 
-
 app.route('/events')
   .get((req, res) => {
     res.status(200).send(stub.events);
