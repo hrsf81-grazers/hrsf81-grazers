@@ -9,15 +9,13 @@ function groups($http) {
       .catch(console.error);
   };
 
-  this.getMembers = () => {
-    const tempGroupId = 2;
-    return $http({
+  this.getMembers = groupId =>
+    $http({
       method: 'GET',
-      url: `/group/${tempGroupId}/users`
+      url: `/group/${groupId}/users`
     })
       .then(response => response.data)
       .catch(console.error);
-  };
 
   this.getGroup = userId =>
     $http({

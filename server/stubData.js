@@ -76,6 +76,14 @@ module.exports = {
       lastName: 'Wong',
       email: 'christine@randomperson.com',
       phone: '555-299-4236'
+    },
+    {
+      id: 6,
+      role: 'staff',
+      firstName: 'Rafiqa',
+      lastName: 'Chukwudi',
+      email: 'rafiqa@grazerscon.com',
+      phone: '555-596-4104'
     }
   ],
 
@@ -95,6 +103,10 @@ module.exports = {
     {
       groupId: 4,
       userId: 5
+    },
+    {
+      groupId: 2,
+      userId: 6
     }
   ],
 
