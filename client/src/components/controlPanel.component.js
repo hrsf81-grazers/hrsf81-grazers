@@ -1,9 +1,9 @@
 module.exports = {
   bindings: {
+    user: '<',
     changeView: '<'
   },
   controller: function(groups) {
-    this.activeUser = 'Christine Wong';
     this.event = 'Grazers Con';
     groups.get()
     .then(groups => this.groups = groups)
@@ -11,7 +11,7 @@ module.exports = {
   },
   template: `
   <div class="control-panel col-md-2">
-    <div class="active-user">{{$ctrl.activeUser}}</div>
+    <div class="active-user">{{$ctrl.user.name}}</div>
     <ul class="control-panel-list">
       <control-panel-item label="$ctrl.event" view="broadcast" on-click="$ctrl.changeView"></control-panel-item>
       <control-panel-item ng-repeat="group in $ctrl.groups track by group.id"
