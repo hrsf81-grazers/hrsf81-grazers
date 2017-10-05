@@ -1,6 +1,7 @@
 module.exports = {
   bindings: {
-    eventId: '<'
+    eventId: '<',
+    group: '<'
   },
   controller($http) {
     this.getSchedule = scheduleId =>
@@ -10,6 +11,16 @@ module.exports = {
       })
         .then(response => response.data)
         .catch(console.error);
+
+    this.$onChanges = (changesObj) => {
+      if (changesObj.group.currentValue) {
+        this.getSchedule(this.group.scheduleId)
+          .then((schedule) => {
+            this.groupSchedule = schedule;
+          })
+          .catch(console.error);
+      }
+    };
 
     $http({
       method: 'GET',
@@ -32,6 +43,8 @@ module.exports = {
       <p class="address">{{$ctrl.event.location}}</p>
       <h4>Event Schedule</h4>
       <schedule-display schedule="$ctrl.eventSchedule"></schedule-display>
+      <h4 ng-if="$ctrl.groupSchedule">Group Schedule</h4>
+      <schedule-display schedule="$ctrl.groupSchedule"></schedule-display>
     </div>
   `
 };
