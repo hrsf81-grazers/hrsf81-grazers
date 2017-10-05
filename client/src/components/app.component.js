@@ -1,5 +1,11 @@
 module.exports = {
+  controller: function() {
+    this.signIn = (user, role) => {
+      console.log(user);
+      console.log(role);
+    };
+  },
   template: `
-    <manage-event></manage-event>
+    <div ng-view></div>
 `
 };

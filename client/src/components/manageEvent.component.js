@@ -1,4 +1,7 @@
 module.exports = {
+  bindings: {
+    user: '<'
+  },
   controller: function() {
     this.view = 'broadcast';
 
@@ -8,7 +11,7 @@ module.exports = {
 
   },
   template: `
-    <control-panel change-view="$ctrl.changeView"></control-panel>
+    <control-panel user="$ctrl.user" change-view="$ctrl.changeView"></control-panel>
     <event-broadcast ng-if="$ctrl.view === 'broadcast'"></event-broadcast>
     <manage-group ng-if="$ctrl.view === 'manageGroup'"></manage-group>
     <div class="right-sidebar col-md-3">

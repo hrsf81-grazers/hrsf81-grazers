@@ -2,6 +2,22 @@ body {
   height: 100vh;
 }
 
+.sign-in {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin-form {
+  align-self: center;
+}
+
+.signin-input {
+  margin: 20px;
+}
+
 .container {
   position: relative;
   height: 100vh;
