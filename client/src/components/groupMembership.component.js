@@ -4,12 +4,14 @@ module.exports = {
     group: '<'
   },
   controller(groups) {
-    this.$onInit = function init() {
-      groups.getMembers()
-        .then((members) => {
-          this.members = members;
-        })
-        .catch(console.error);
+    this.$onChanges = function bound() {
+      if (this.group) {
+        groups.getMembers(this.group.id)
+          .then((members) => {
+            this.members = members.filter(member => member.id !== this.user.id);
+          })
+          .catch(console.error);
+      }
     };
   },
   template: `

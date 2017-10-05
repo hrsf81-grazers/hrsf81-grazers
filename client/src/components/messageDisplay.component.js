@@ -7,7 +7,7 @@ module.exports = {
       const messageNode = document.createElement('li');
       messageNode.className = 'message';
 
-      const messageParts = ['to', 'from', 'title', 'text'];
+      const messageParts = ['fromName', 'title', 'text'];
       messageParts.forEach((part) => {
         const messagePartNode = document.createElement('div');
         messagePartNode.textContent = message[part];
