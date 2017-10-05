@@ -2,6 +2,13 @@ module.exports = {
   bindings: {
     user: '<'
   },
+  controller: function(groups) {
+    this.$onInit = function() {
+      groups.getGroup(this.user.id)
+      .then(group => this.group = group)
+      .catch(console.error);
+    }
+  },
   template: `
     <group-membership user="$ctrl.user"></group-membership>
     <group-updates></group-updates>

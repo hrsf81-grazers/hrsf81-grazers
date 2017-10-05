@@ -7,7 +7,7 @@ function groups($http) {
     })
     .then(response => response.data)
     .catch(console.error);
-  }
+  };
 
   this.getMembers = function() {
     const tempGroupId = 2;
@@ -17,7 +17,16 @@ function groups($http) {
     })
     .then(response => response.data)
     .catch(console.error);
-  }
+  };
+
+  this.getGroup = function(userId) {
+    return $http({
+      method: 'GET',
+      url: `/user/${userId}/group`
+    })
+    .then(response => response.data)
+    .catch(console.error);
+  };
 }
 
 module.exports = groups;
