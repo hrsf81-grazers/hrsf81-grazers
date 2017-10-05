@@ -5,11 +5,6 @@ module.exports = {
   controller: function() {
     this.user = '';
     this.role = '';
-
-    // this.signIn = (user, role) => {
-    //   console.log(user);
-    //   console.log(role);
-    // };
   },
   template: `
     <h1>Welcome to Event HUD!</h1>
