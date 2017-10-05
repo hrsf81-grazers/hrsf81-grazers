@@ -31,7 +31,7 @@ module.exports = {
       <h3>{{$ctrl.event.name}}</h3>
       <p class="address">{{$ctrl.event.location}}</p>
       <h4>Event Schedule</h4>
-
+      <schedule-display schedule="$ctrl.eventSchedule"></schedule-display>
     </div>
   `
 };
