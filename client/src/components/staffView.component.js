@@ -3,6 +3,8 @@ module.exports = {
     user: '<'
   },
   controller(groups) {
+    // TODO: Remove hardcoding when there is proper event creation and management
+    this.eventId = 1;
     this.$onInit = function init() {
       groups.getGroup(this.user.id)
         .then((group) => {
@@ -14,6 +16,6 @@ module.exports = {
   template: `
     <group-membership user="$ctrl.user" group="$ctrl.group"></group-membership>
     <group-updates user="$ctrl.user" group="$ctrl.group"></group-updates>
-    <event-information></event-information>
+    <event-information eventId="$ctrl.eventId"></event-information>
   `
 };
