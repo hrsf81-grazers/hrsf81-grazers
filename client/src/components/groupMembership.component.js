@@ -4,7 +4,7 @@ module.exports = {
     group: '<'
   },
   controller(groups) {
-    this.$onChanges = function bound() {
+    this.$onChanges = () => {
       if (this.group) {
         groups.getMembers(this.group.id)
           .then((members) => {
