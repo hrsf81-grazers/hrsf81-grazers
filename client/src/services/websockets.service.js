@@ -2,6 +2,7 @@ function websockets() {
   this.socket = new WebSocket(`ws://${window.location.host}/`);
 
   this.send = (message) => {
+    console.log(message)
     this.socket.send(message);
   };
 

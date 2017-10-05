@@ -1,4 +1,7 @@
 module.exports = {
+  bindings: {
+    user: '<'
+  },
   controller(groups, websockets) {
     groups.get()
       .then((groupData) => {
@@ -9,7 +12,6 @@ module.exports = {
     this.clearInputs = () => {
       this.messageTitle = '';
       this.messageBody = '';
-      this.messageFrom = '';
       this.messageTo = '';
     };
     this.clearInputs();
@@ -19,7 +21,7 @@ module.exports = {
         to: this.messageTo,
         title: this.messageTitle,
         text: this.messageBody,
-        from: this.messageFrom
+        from: this.user.id
       }));
       this.clearInputs();
     };
@@ -34,8 +36,6 @@ module.exports = {
       <input id="compose-message-title" class="form-input" autocomplete="off" ng-model="$ctrl.messageTitle"/>
       <label for="compose-message-body">Message</label>
       <textarea id="compose-message-body" class="form-input" rows="5" cols="75" autocomplete="off" ng-model="$ctrl.messageBody"></textarea>
-      <label for="compose-message-from">From</label>
-      <input id="compose-message-from" class="form-input" autocomplete="off" ng-model="$ctrl.messageFrom"/>
       <button>Send</button>
     </form>
   `
