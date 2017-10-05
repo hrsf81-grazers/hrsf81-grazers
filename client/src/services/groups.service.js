@@ -8,6 +8,16 @@ function groups($http) {
     .then(response => response.data)
     .catch(console.error);
   }
+
+  this.getMembers = function() {
+    const tempGroupId = 2;
+    return $http({
+      method: 'GET',
+      url: `/group/${tempGroupId}/users`
+    })
+    .then(response => response.data)
+    .catch(console.error);
+  }
 }
 
 module.exports = groups;

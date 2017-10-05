@@ -7,3 +7,5 @@ angular.module('eventHUD').component('eventBroadcast', require('./eventBroadcast
 angular.module('eventHUD').component('messageSend', require('./messageSend.component'));
 angular.module('eventHUD').component('messageDisplay', require('./messageDisplay.component'));
 angular.module('eventHUD').component('manageGroup', require('./manageGroup.component'));
+angular.module('eventHUD').component('stayUpdated', require('./stayUpdated.component'));
+angular.module('eventHUD').component('groupMembership', require('./groupMembership.component'));

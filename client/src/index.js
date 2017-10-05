@@ -12,9 +12,13 @@ angular.module('eventHUD', ['ngRoute'])
       .when('/organizer', {
         template: '<manage-event user="$resolve.user"></manage-event>',
         resolve: {
-          user: (signin) => {
-            return signin.getUser();
-          }
+          user: (signin) => signin.getUser()
+        }
+      })
+      .when('/staff', {
+        template: '<stay-updated user="$resolve.user"></stay-updated>',
+        resolve: {
+          user: (signin) => signin.getUser()
         }
       })
       .otherwise('/');

@@ -13,7 +13,11 @@ function signIn($location) {
     return (name, role) => {
       this.signedInUser = name;
       this.signedInRole = role;
-      $location.path('/organizer');
+      if (role === 'Organizer') {
+        $location.path('/organizer');
+      } else if (role === 'Staff') {
+        $location.path('/staff');
+      }
     };
   };
 }
