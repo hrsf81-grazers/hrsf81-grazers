@@ -151,5 +151,258 @@ module.exports = {
       text: 'Post your memories to Instagram with hashtag #GrazerCon2017. Daily prizes for best photo!',
       eventId: 1
     }
+  ],
+
+  schedules: [
+    {
+      id: 1,
+      days: [
+        {
+          date: 'October 9, 2017',
+          timetable: [
+            {
+              time: '8:00 AM to 10:00 AM',
+              activity: 'Registration',
+              location: 'Front Lobby'
+            },
+            {
+              time: '10:00 AM to 11:00 AM',
+              activity: 'Keynote Speaker',
+              location: 'Main Auditorium'
+            },
+            {
+              time: '12:00 PM to 1:30 PM',
+              activity: 'Lunch',
+              location: 'Grand Ballroom'
+            },
+            {
+              time: '2:00 PM to 4:00 PM',
+              activity: 'Breakout Sessions I',
+              location: 'Blue, Green and Yellow Rooms'
+            },
+            {
+              time: '4:30 PM to 6:30 PM',
+              activity: 'Breakout Sessions II',
+              location: 'Blue, Green and Yellow Rooms'
+            },
+            {
+              time: '6:30 PM to 8:30 PM',
+              activity: 'Dinner',
+              location: 'Grand Ballroom'
+            },
+            {
+              time: '9:00 PM to 11:30 PM',
+              activity: 'Movies Under the Stars',
+              location: 'Center Gardens'
+            }
+          ]
+        },
+        {
+          date: 'October 10, 2017',
+          timetable: [
+            {
+              time: '9:00 AM to 10:00 AM',
+              activity: 'Continental Breakfast',
+              location: 'Grand Ballroom'
+            },
+            {
+              time: '10:00 AM to 11:30 AM',
+              activity: 'Panel: Famous People',
+              location: 'Main Auditorium'
+            },
+            {
+              time: '12:00 PM to 1:00 PM',
+              activity: 'Lunch',
+              location: 'Grand Ballroom'
+            },
+            {
+              time: '2:00 PM to 6:00 PM',
+              activity: 'Art Exhibition',
+              location: 'Center Gardens'
+            },
+            {
+              time: '3:00 PM to 4:30 PM',
+              activity: 'Tea Time',
+              location: 'Grand Ballroom'
+            },
+            {
+              time: '6:00 PM to 8:00 PM',
+              activity: 'Dinner',
+              location: 'Grand Ballroom'
+            },
+            {
+              time: '8:00 PM to 9:30 PM',
+              activity: 'Awards Ceremony',
+              location: 'Main Auditorium'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 2,
+      days: [
+        {
+          date: 'October 9, 2017',
+          timetable: [
+            {
+              time: '7:00 AM to 7:30 AM',
+              activity: 'Greeters Checkin',
+              location: 'Staff Cafeteria'
+            },
+            {
+              time: '8:00 AM to 10:00 AM',
+              activity: 'Guest Registration',
+              location: 'Front Lobby'
+            },
+            {
+              time: '11:30 PM to 1:30 PM',
+              activity: 'Move guests to and from lunch',
+              location: 'Main Auditorium & Grand Ballroom'
+            },
+            {
+              time: '1:30 PM to 2:30 PM',
+              activity: 'Lunch',
+              location: 'Staff Cafeteria'
+            },
+            {
+              time: '2:30 PM to 5:30 PM',
+              activity: 'Write thank you cards',
+              location: 'Meeting Room A'
+            },
+            {
+              time: '6:00 PM to 7:30 PM',
+              activity: 'Help guests get to dinner',
+              location: 'Grand Ballroom'
+            },
+            {
+              time: '7:30 PM to 8:30 PM',
+              activity: 'Dinner',
+              location: 'Staff Cafeteria'
+            },
+            {
+              time: '8:00 PM to 9:00 PM',
+              activity: 'Help guests get to the gardens',
+              location: 'Center Gardens'
+            }
+          ]
+        },
+        {
+          date: 'October 10, 2017',
+          timetable: [
+            {
+              time: '7:30 AM to 8:30 AM',
+              activity: 'Staff Debrief',
+              location: 'Staff Cafeteria'
+            },
+            {
+              time: '9:00 AM to 10:30 AM',
+              activity: 'Welcome back guests',
+              location: 'Front Lobby'
+            },
+            {
+              time: '12:00 PM to 1:30 PM',
+              activity: 'Lunch',
+              location: 'Staff Cafeteria'
+            },
+            {
+              time: '2:30 PM to 5:30 PM',
+              activity: 'Write thank you cards',
+              location: 'Meeting Room A'
+            },
+            {
+              time: '6:00 PM to 7:00 PM',
+              activity: 'Dinner',
+              location: 'Staff Cafeteria'
+            },
+            {
+              time: '7:30 PM to 10:00 PM',
+              activity: 'Manage souvenir booths',
+              location: 'Center Gardens & Front Lobby'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 3,
+      days: [
+        {
+          date: 'October 9, 2017',
+          timetable: [
+            {
+              time: '7:00 AM to 7:30 AM',
+              activity: 'Volunteers Checkin',
+              location: 'Staff Cafeteria'
+            },
+            {
+              time: '8:00 AM to 10:30 AM',
+              activity: 'Meet & Greet Guests',
+              location: 'Front Lobby & Main Auditorium'
+            },
+            {
+              time: '11:30 PM to 1:30 PM',
+              activity: 'Move guests to and from lunch',
+              location: 'Main Auditorium & Grand Ballroom'
+            },
+            {
+              time: '1:30 PM to 2:30 PM',
+              activity: 'Lunch',
+              location: 'Staff Cafeteria'
+            },
+            {
+              time: '6:00 PM to 7:30 PM',
+              activity: 'Help guests get to dinner',
+              location: 'Grand Ballroom'
+            },
+            {
+              time: '7:30 PM to 8:30 PM',
+              activity: 'Dinner',
+              location: 'Staff Cafeteria'
+            },
+            {
+              time: '8:00 PM to 9:00 PM',
+              activity: 'Help guests get to the gardens',
+              location: 'Center Gardens'
+            }
+          ]
+        },
+        {
+          date: 'October 10, 2017',
+          timetable: [
+            {
+              time: '7:30 AM to 8:30 AM',
+              activity: 'Volunteer Check-in',
+              location: 'Meeting Room A'
+            },
+            {
+              time: '9:00 AM to 10:30 AM',
+              activity: 'Welcome back guests',
+              location: 'Front Lobby'
+            },
+            {
+              time: '12:00 PM to 1:30 PM',
+              activity: 'Lunch',
+              location: 'Staff Cafeteria'
+            },
+            {
+              time: '2:00 PM to 5:00 PM',
+              activity: 'Souvenir bag construction',
+              location: 'Meeting Room A & Meeting Room B'
+            },
+            {
+              time: '6:00 PM to 7:00 PM',
+              activity: 'Dinner',
+              location: 'Grand Ballroom'
+            },
+            {
+              time: '7:30 PM to 10:00 PM',
+              activity: 'Manage souvenir booths',
+              location: 'Center Gardens & Front Lobby'
+            }
+          ]
+        }
+      ]
+    }
   ]
 };
