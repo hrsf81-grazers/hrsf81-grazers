@@ -1,6 +1,7 @@
 const express = require('express');
-const router = express.Router();
 const stub = require('./stubData.js');
+
+const router = express.Router();
 
 router.use((req, res, next) => {
   console.log('Handing /message routes');
@@ -11,7 +12,7 @@ router.route('/:messageId')
   .get((req, res) => {
     const messageId = Number(req.params.messageId);
     let message;
-    for (let i = 0; i < stub.messages.length; i++) {
+    for (let i = 0; i < stub.messages.length; i += 1) {
       if (stub.messages[i].id === messageId) {
         message = stub.messages[i];
       }

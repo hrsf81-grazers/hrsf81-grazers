@@ -1,6 +1,7 @@
 const express = require('express');
-const router = express.Router();
 const stub = require('./stubData.js');
+
+const router = express.Router();
 
 router.use((req, res, next) => {
   console.log('Handing /group routes');
@@ -11,7 +12,7 @@ router.route('/:groupId')
   .get((req, res) => {
     const groupId = Number(req.params.groupId);
     let group;
-    for (let i = 0; i < stub.groups.length; i++) {
+    for (let i = 0; i < stub.groups.length; i += 1) {
       if (stub.groups[i].id === groupId) {
         group = stub.groups[i];
       }
@@ -29,12 +30,15 @@ router.route('/:groupId/users')
     const groupId = Number(req.params.groupId);
     const groupUsers = stub.userGroups.filter(userGroup =>
       userGroup.groupId === groupId);
-    const users = groupUsers.map(groupUser => {
-      for (let i = 0; i < stub.users.length; i++) {
+    const users = groupUsers.map((groupUser) => {
+      let matchedUser;
+      for (let i = 0; i < stub.users.length; i += 1) {
         if (stub.users[i].id === groupUser.userId) {
-          return stub.users[i];
+          matchedUser = stub.users[i];
+          break;
         }
       }
+      return matchedUser;
     });
     res.status(200).send(users);
   })
@@ -42,10 +46,11 @@ router.route('/:groupId/users')
     const groupId = Number(req.params.groupId);
     const users = req.body;
     let dummyUserId = 6;
-    const userGroups = users.map(user => {
+    const userGroups = users.map(() => {
+      dummyUserId += 1;
       return {
-        groupId: groupId,
-        userId: dummyUserId++
+        groupId,
+        userId: dummyUserId
       };
     });
     res.status(201).send(userGroups);
@@ -53,15 +58,18 @@ router.route('/:groupId/users')
 
 router.delete('/:groupId/user/:userId', (req, res) => {
   const groupId = Number(req.params.groupId);
-  const usersId = Number(req.params.userId);
+  const userId = Number(req.params.userId);
   const groupUsers = stub.userGroups.filter(userGroup =>
     userGroup.groupId === groupId && userGroup.userId !== userId);
-  const users = groupUsers.map(groupUser => {
-    for (let id in stub.users) {
-      if (id === groupUser.userId) {
-        return stub.users[id];
+  const users = groupUsers.map((groupUser) => {
+    let matchedUser;
+    for (let i = 0; i < stub.users.length; i += 1) {
+      if (stub.users[i].id === groupUser.userId) {
+        matchedUser = stub.users[i];
+        break;
       }
     }
+    return matchedUser;
   });
   res.status(200).send(users);
 });

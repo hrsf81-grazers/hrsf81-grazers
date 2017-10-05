@@ -2,16 +2,18 @@ module.exports = {
   bindings: {
     signIn: '<'
   },
-  controller: function($http) {
+  controller($http) {
     this.user = '';
 
     $http({
       method: 'GET',
-      url: `/users`
+      url: '/users'
     })
-    .then(response => response.data)
-    .then(users => this.users = users)
-    .catch(console.error);
+      .then(response => response.data)
+      .then((users) => {
+        this.users = users;
+      })
+      .catch(console.error);
   },
   template: `
     <h1>Welcome to Event HUD!</h1>

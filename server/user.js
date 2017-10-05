@@ -1,6 +1,7 @@
 const express = require('express');
-const router = express.Router();
 const stub = require('./stubData.js');
+
+const router = express.Router();
 
 router.use((req, res, next) => {
   console.log('Handing /user routes');
@@ -11,7 +12,7 @@ router.route('/:userId')
   .get((req, res) => {
     const userId = Number(req.params.userId);
     let user;
-    for (let i = 0; i < stub.users.length; i++) {
+    for (let i = 0; i < stub.users.length; i += 1) {
       if (stub.users[i].id === userId) {
         user = stub.users[i];
       }
@@ -27,14 +28,14 @@ router.route('/:userId')
 router.get('/:userId/group', (req, res) => {
   const userId = Number(req.params.userId);
   let userGroup;
-  for (let i = 0; i < stub.userGroups.length; i++) {
+  for (let i = 0; i < stub.userGroups.length; i += 1) {
     if (stub.userGroups[i].userId === userId) {
       userGroup = stub.userGroups[i];
       break;
     }
   }
   let group;
-  for (let i = 0; i < stub.groups.length; i++) {
+  for (let i = 0; i < stub.groups.length; i += 1) {
     if (stub.groups[i].id === userGroup.groupId) {
       group = stub.groups[i];
       break;

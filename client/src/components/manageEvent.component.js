@@ -2,13 +2,12 @@ module.exports = {
   bindings: {
     user: '<'
   },
-  controller: function() {
+  controller() {
     this.view = 'broadcast';
 
     this.changeView = (view) => {
       this.view = view;
     };
-
   },
   template: `
     <control-panel user="$ctrl.user" change-view="$ctrl.changeView"></control-panel>

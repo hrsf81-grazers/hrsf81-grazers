@@ -3,12 +3,14 @@ module.exports = {
     user: '<',
     group: '<'
   },
-  controller: function(groups) {
-    this.$onInit = function() {
+  controller(groups) {
+    this.$onInit = function init() {
       groups.getMembers()
-      .then(members => this.members = members)
-      .catch(console.error);
-    }
+        .then((members) => {
+          this.members = members;
+        })
+        .catch(console.error);
+    };
   },
   template: `
   <div class="control-panel col-md-2">
@@ -18,4 +20,4 @@ module.exports = {
     </ul>
   </div>
   `
-}
+};
