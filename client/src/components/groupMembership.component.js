@@ -1,11 +1,14 @@
 module.exports = {
   bindings: {
-    user: '<'
+    user: '<',
+    group: '<'
   },
   controller: function(groups) {
-    groups.getMembers()
-    .then(members => this.members = members)
-    .catch(console.error);
+    this.$onInit = function() {
+      groups.getMembers()
+      .then(members => this.members = members)
+      .catch(console.error);
+    }
   },
   template: `
   <div class="control-panel col-md-2">

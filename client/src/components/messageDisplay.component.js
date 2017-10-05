@@ -1,4 +1,7 @@
 module.exports = {
+  bindings: {
+    group: '<'
+  },
   controller: function(websockets) {
 
     this.displayMessage = message => {
@@ -17,8 +20,11 @@ module.exports = {
 
     this.receive = event => {
       console.log(`Message from the server ${event.data}`);
-      const message = this.displayMessage(JSON.parse(event.data));
-      document.getElementById('messages').appendChild(message);
+      const data = JSON.parse(event.data);
+      if (data.to.includes(String(this.group.id))) {
+        const message = this.displayMessage(data);
+        document.getElementById('messages').appendChild(message);
+      }
     };
 
     websockets.receive(this.receive);
