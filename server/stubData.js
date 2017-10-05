@@ -102,60 +102,42 @@ module.exports = {
     {
       id: 1,
       fromUserId: 3,
+      toGroupId: 2,
       title: '',
       text: 'I just signed in for lemonade stand duty and we are out of lemons!',
+      eventId: 1
     },
     {
       id: 2,
       fromUserId: 1,
+      toGroupId: 1,
       title: 'Room Change',
-      text: 'The "Guilt-Free Grazing" seminar has moved from the Grand Ballroom to the Autumm room.'
+      text: 'The "Guilt-Free Grazing" seminar has moved from the Grand Ballroom to the Autumm room.',
+      eventId: 1
+    },
+    {
+      id: 2,
+      fromUserId: 1,
+      toGroupId: 2,
+      title: 'Room Change',
+      text: 'The "Guilt-Free Grazing" seminar has moved from the Grand Ballroom to the Autumm room.',
+      eventId: 1
+    },
+    {
+      id: 2,
+      fromUserId: 1,
+      toGroupId: 3,
+      title: 'Room Change',
+      text: 'The "Guilt-Free Grazing" seminar has moved from the Grand Ballroom to the Autumm room.',
+      eventId: 1
     },
     {
       id: 3,
       fromUserId: 1,
+      toGroupId: 4,
       title: 'Welcome!',
-      text: 'Post your memories to Instagram with hashtag #GrazerCon2017. Daily prizes for best photo!'
-    },
-    {
-      id: 4,
-      fromUserId: 4,
-      title: '',
-      text: 'We don\'t use real lemons here. The lemonade mix is in the white jug under the table.'
-    }
-  ],
-
-  messageRecipients: [
-    {
-      messageId: 1,
-      recipientType: 'group',
-      recipientId: 2
-    },
-    {
-      messageId: 2,
-      recipientType: 'group',
-      recipientId: 1
-    },
-    {
-      messageId: 2,
-      recipientType: 'group',
-      recipientId: 2
-    },
-    {
-      messageId: 2,
-      recipientType: 'group',
-      recipientId: 3
-    },
-    {
-      messageId: 3,
-      recipientType: 'group',
-      recipientId: 4
-    },
-    {
-      messageId: 4,
-      recipientType: 'user',
-      recipientId: 3
+      text: 'Post your memories to Instagram with hashtag #GrazerCon2017. Daily prizes for best photo!',
+      eventId: 1
     }
   ]
-  
 };
