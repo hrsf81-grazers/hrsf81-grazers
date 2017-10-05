@@ -16,7 +16,7 @@ angular.module('eventHUD', ['ngRoute'])
         }
       })
       .when('/staff', {
-        template: '<stay-updated user="$resolve.user"></stay-updated>',
+        template: '<staff-view user="$resolve.user"></staff-view>',
         resolve: {
           user: (signin) => signin.getUser()
         }
