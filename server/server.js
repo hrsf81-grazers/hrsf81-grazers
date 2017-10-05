@@ -13,6 +13,7 @@ const event = require('./event');
 const group = require('./group');
 const user = require('./user');
 const message = require('./message');
+const schedule = require('./schedule');
 const stub = require('./stubData');
 
 app.use(bodyParser.json());
@@ -22,6 +23,7 @@ app.use('/event', event);
 app.use('/group', group);
 app.use('/user', user);
 app.use('/message', message);
+app.use('/schedule', schedule);
 
 wss.on('connection', (ws) => {
   console.log('New client connected');
