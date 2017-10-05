@@ -19,7 +19,7 @@ module.exports = {
     this.clearInputs = () => {
       this.messageTitle = '';
       this.messageBody = '';
-      this.messageTo = this.user.role === 'organizer' ? '' : [this.group.id];
+      this.messageTo = this.user.role === 'organizer' ? '' : [JSON.stringify([this.group.id, this.group.name])];
     };
 
     this.sendMessage = () => {

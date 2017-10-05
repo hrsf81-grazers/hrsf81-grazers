@@ -21,7 +21,8 @@ module.exports = {
     this.receive = (event) => {
       console.log(`Message from the server ${event.data}`);
       const data = JSON.parse(event.data);
-      if (this.user.role === 'organizer' || data.toIds.includes(this.group.id)) {
+      const isBroadcast = this.user.role === 'organizer' && data.fromId === this.user.id;
+      if (isBroadcast || data.toIds.includes(this.group.id)) {
         const message = this.displayMessage(data);
         document.getElementById('messages').appendChild(message);
       }
