@@ -1,15 +1,15 @@
 module.exports = {
-  // bindings: {
-  //   signIn: '<'
-  // },
+  bindings: {
+    signIn: '<'
+  },
   controller: function() {
     this.user = '';
     this.role = '';
 
-    this.signIn = (user, role) => {
-      console.log(user);
-      console.log(role);
-    };
+    // this.signIn = (user, role) => {
+    //   console.log(user);
+    //   console.log(role);
+    // };
   },
   template: `
     <h1>Welcome to Event HUD!</h1>
