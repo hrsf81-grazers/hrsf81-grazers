@@ -14,8 +14,6 @@ module.exports = {
   template: `
     <group-membership user="$ctrl.user" group="$ctrl.group"></group-membership>
     <group-updates user="$ctrl.user" group="$ctrl.group"></group-updates>
-    <div class="right-sidebar col-md-3">
-      <h3>Component for event information</h3>
-    </div>
+    <event-information></event-information>
   `
 };

@@ -12,3 +12,4 @@ angular.module('eventHUD').component('manageGroup', require('./manageGroup.compo
 angular.module('eventHUD').component('staffView', require('./staffView.component'));
 angular.module('eventHUD').component('groupMembership', require('./groupMembership.component'));
 angular.module('eventHUD').component('groupUpdates', require('./groupUpdates.component'));
+angular.module('eventHUD').component('eventInformation', require('./eventInformation.component'));
