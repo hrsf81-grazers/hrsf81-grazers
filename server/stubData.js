@@ -5,28 +5,32 @@ module.exports = {
       id: 1,
       name: 'Grazers Con',
       location: '944 Market Street, 8th floor, San Francisco, CA 94102',
-      organizerId: 1
+      organizerId: 1,
+      scheduleId: 1
     }
   ],
 
   groups: [
     {
       id: 1,
-      name: 'Greeters',
+      name: 'Volunteers',
       type: 'staff',
-      eventId: 1
+      eventId: 1,
+      scheduleId: 3
     },
     {
       id: 2,
-      name: 'Refreshments',
+      name: 'Greeters',
       type: 'staff',
-      eventId: 1
+      eventId: 1,
+      scheduleId: 2
     },
     {
       id: 3,
       name: 'Tech Support',
       type: 'staff',
-      eventId: 1
+      eventId: 1,
+      scheduleId: 2
     },
     {
       id: 4,
@@ -101,7 +105,7 @@ module.exports = {
       userId: 2
     },
     {
-      groupId: 4,
+      groupId: 1,
       userId: 5
     },
     {

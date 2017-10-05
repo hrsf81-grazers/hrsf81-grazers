@@ -35,4 +35,23 @@ router.get('/:eventId/users', (req, res) => {
   res.status(200).send(stub.users);
 });
 
+router.get('/:eventId/schedule', (req, res) => {
+  const eventId = Number(req.params.eventId);
+  let event;
+  for (let i = 0; i < stub.events.length; i += 1) {
+    if (stub.events[i].id === eventId) {
+      event = stub.events[i];
+      break;
+    }
+  }
+  let schedule;
+  for (let i = 0; i < stub.schedules.length; i += 1) {
+    if (stub.schedules[i].id === event.scheduleId) {
+      schedule = stub.schedules[i];
+      break;
+    }
+  }
+  res.status(200).send(schedule);
+});
+
 module.exports = router;
