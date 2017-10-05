@@ -1,23 +1,14 @@
 function signIn($location) {
-  this.signedInUser = '';
-  this.signedInRole = '';
+  this.user = null;
 
   this.getUser = () => {
-    return {
-      name: this.signedInUser,
-      role: this.signedInRole
-    };
+    return this.user;
   };
 
   this.submit = () => {
-    return (name, role) => {
-      this.signedInUser = name;
-      this.signedInRole = role;
-      if (role === 'Organizer') {
-        $location.path('/organizer');
-      } else if (role === 'Staff') {
-        $location.path('/staff');
-      }
+    return (user) => {
+      this.user = JSON.parse(user);
+      $location.path(`/${this.user.role}`);
     };
   };
 }

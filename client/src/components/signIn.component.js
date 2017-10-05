@@ -4,7 +4,6 @@ module.exports = {
   },
   controller: function($http) {
     this.user = '';
-    this.role = '';
 
     $http({
       method: 'GET',
@@ -16,18 +15,11 @@ module.exports = {
   },
   template: `
     <h1>Welcome to Event HUD!</h1>
-    <form class="signin-form" ng-submit="$ctrl.signIn($ctrl.user, $ctrl.role)">
+    <form class="signin-form" ng-submit="$ctrl.signIn($ctrl.user)">
       <div class="signin-input">
         <label for="signin-user-name">Who are you?</label>
         <select id="user-select" required ng-model="$ctrl.user">
-          <option ng-repeat="user in $ctrl.users track by user.id">{{user.firstName}} {{user.lastName}}</option>
-        </select>
-      </div>
-      <div class="signin-input">
-        <label for="role-select">What is your role?</label>
-        <select id="role-select" required ng-model="$ctrl.role">
-          <option>Organizer</option>
-          <option>Staff</option>
+          <option ng-repeat="user in $ctrl.users track by user.id" value={{user}}>{{user.firstName}} {{user.lastName}}</option>
         </select>
       </div>
       <div class="signin-input">
