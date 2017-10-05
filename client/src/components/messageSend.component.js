@@ -1,10 +1,12 @@
 module.exports = {
-  controller: function(groups, websockets) {
+  controller(groups, websockets) {
     groups.get()
-    .then(groups => this.groups = groups)
-    .catch(console.error);
+      .then((groupData) => {
+        this.groups = groupData;
+      })
+      .catch(console.error);
 
-    this.clearInputs = function() {
+    this.clearInputs = () => {
       this.messageTitle = '';
       this.messageBody = '';
       this.messageFrom = '';
@@ -12,7 +14,7 @@ module.exports = {
     };
     this.clearInputs();
 
-    this.sendMessage = function() {
+    this.sendMessage = () => {
       websockets.send(JSON.stringify({
         to: this.messageTo,
         title: this.messageTitle,

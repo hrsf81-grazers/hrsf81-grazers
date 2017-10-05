@@ -6,5 +6,15 @@
  */
 
 module.exports = {
-  extends: './node_modules/eslint-config-airbnb-base/index.js'
+  extends: 'airbnb-base',
+  parser: 'babel-eslint',
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
+    mocha: true
+  },
+  rules: {
+    "comma-dangle": 0,
+  }
 };

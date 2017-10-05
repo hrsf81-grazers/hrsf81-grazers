@@ -3,11 +3,13 @@ module.exports = {
     user: '<',
     changeView: '<'
   },
-  controller: function(groups) {
+  controller(groups) {
     this.event = 'Grazers Con';
     groups.get()
-    .then(groups => this.groups = groups)
-    .catch(console.error);
+      .then((groupsData) => {
+        this.groups = groupsData;
+      })
+      .catch(console.error);
   },
   template: `
   <div class="control-panel col-md-2">
@@ -21,4 +23,4 @@ module.exports = {
     </ul>
   </div>
   `
-}
+};
