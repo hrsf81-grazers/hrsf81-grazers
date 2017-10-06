@@ -19,6 +19,7 @@ const stub = require('./stubData');
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '/../client/dist')));
 app.use(express.static(path.join(__dirname, '/../node_modules')));
+app.use(express.static(path.join(__dirname, '/../client/src/templates')));
 app.use('/event', event);
 app.use('/group', group);
 app.use('/user', user);
