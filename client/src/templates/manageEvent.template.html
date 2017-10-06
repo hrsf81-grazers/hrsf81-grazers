@@ -1,4 +1,8 @@
-<control-panel user="$ctrl.user" change-view="$ctrl.changeView"></control-panel>
-<event-broadcast ng-if="$ctrl.view === 'broadcast'" user="$ctrl.user"></event-broadcast>
-<manage-group ng-if="$ctrl.view === 'manageGroup'"></manage-group>
-<event-information eventId="$ctrl.eventId"></event-information>
+<div flex layout="row" class="container">
+  <md-sidenav md-is-locked-open="true" flex md-whiteframe="5">
+    <control-panel user="$ctrl.user" change-view="$ctrl.changeView"></control-panel>
+  </md-sidenav>
+  <event-broadcast ng-if="$ctrl.view === 'broadcast'" user="$ctrl.user"></event-broadcast>
+  <manage-group ng-if="$ctrl.view === 'manageGroup'"></manage-group>
+  <event-information eventId="$ctrl.eventId"></event-information>
+</div>
