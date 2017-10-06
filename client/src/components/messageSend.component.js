@@ -51,7 +51,7 @@ module.exports = {
       <input id="compose-message-title" class="form-input" autocomplete="off" ng-model="$ctrl.messageTitle" ng-if="$ctrl.user.role === 'organizer'"/>
       <label for="compose-message-body">Message</label>
       <textarea id="compose-message-body" class="form-input" rows="5" cols="75" autocomplete="off" ng-model="$ctrl.messageBody"></textarea>
-      <button>Send</button>
+      <button id="send-message-button">Send</button>
     </form>
   `
 };
