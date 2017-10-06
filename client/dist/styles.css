@@ -10,28 +10,20 @@ body {
   align-items: center;
 }
 
-.signin-form {
-  align-self: center;
-}
-
-.signin-input {
-  margin: 20px;
-}
-
 .container {
   position: relative;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
+  /*display: flex;
+  flex-direction: column;*/
 }
 
 .control-panel {
-  background-color: pink;
+  background-color: #ebebeb;
   height: 100vh;
 }
 
 .right-sidebar {
-  background-color: grey;
+  background-color: #ebebeb;
   height: 100vh;
   overflow: scroll;
 }
