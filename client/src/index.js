@@ -1,6 +1,10 @@
 const angular = require('angular');
+require('angular-animate');
+require('angular-aria');
+require('angular-messages');
+require('angular-material');
 
-angular.module('eventHUD', ['ngRoute'])
+angular.module('eventHUD', ['ngRoute', 'ngMaterial'])
   .config(($routeProvider, $locationProvider) => {
     $routeProvider
       .when('/', {
