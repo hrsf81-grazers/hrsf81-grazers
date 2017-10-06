@@ -44,7 +44,7 @@ module.exports = {
   template: `
     <label for="compose-message-to" ng-if="$ctrl.user.role === 'organizer'">To</label>
     <form ng-submit="$ctrl.sendMessage()">
-      <select id="group-select" class="form-input" required multiple ng-model="$ctrl.messageTo" ng-if="$ctrl.user.role === 'organizer'">
+      <select id="group-select" class="form-input" multiple ng-model="$ctrl.messageTo" ng-if="$ctrl.user.role === 'organizer'">
         <option ng-repeat="group in $ctrl.groups track by group.id" value="{{[group.id, group.name]}}">{{group.name}}</option>
       </select>
       <label for="compose-message-title" ng-if="$ctrl.user.role === 'organizer'">Message Title</label>

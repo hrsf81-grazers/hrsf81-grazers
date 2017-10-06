@@ -31,14 +31,14 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'node_modules/angular/angular.js',
+      'client/dist/app.bundle.js',
+      'node_modules/angular-route/angular-route.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'node_modules/sinon/pkg/sinon-4.0.1.js',
       'node_modules/chai/chai.js',
-      'src/index.js',
-      'src/**/*.js',
-      'spec/*.js',
-      'src/templates/*.html'
+      //'client/src/index.js',
+      //'client/src/**/*.js',
+      'spec/clientSpec.js',
     ],
 
     plugins: [
