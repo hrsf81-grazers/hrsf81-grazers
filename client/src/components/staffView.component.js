@@ -13,9 +13,5 @@ module.exports = {
         .catch(console.error);
     };
   },
-  template: `
-    <group-membership user="$ctrl.user" group="$ctrl.group"></group-membership>
-    <group-updates user="$ctrl.user" group="$ctrl.group"></group-updates>
-    <event-information eventId="$ctrl.eventId" group="$ctrl.group"></event-information>
-  `
+  templateUrl: 'staffView.template.html'
 };

@@ -30,7 +30,5 @@ module.exports = {
 
     websockets.receive(this.receive);
   },
-  template: `
-    <ul id="messages"></ul>
-  `
+  templateUrl: 'messageDisplay.template.html'
 };
