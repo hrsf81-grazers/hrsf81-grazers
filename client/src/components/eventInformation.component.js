@@ -37,14 +37,5 @@ module.exports = {
       })
       .catch(console.error);
   },
-  template: `
-    <div class="right-sidebar col-md-3">
-      <h3>{{$ctrl.event.name}}</h3>
-      <p class="address">{{$ctrl.event.location}}</p>
-      <h4>Event Schedule</h4>
-      <schedule-display schedule="$ctrl.eventSchedule"></schedule-display>
-      <h4 ng-if="$ctrl.groupSchedule">Group Schedule</h4>
-      <schedule-display schedule="$ctrl.groupSchedule"></schedule-display>
-    </div>
-  `
+  templateUrl: 'eventInformation.template.html'
 };

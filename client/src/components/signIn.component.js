@@ -15,5 +15,5 @@ module.exports = {
       })
       .catch(console.error);
   },
-  templateUrl: 'app.html'
+  templateUrl: 'signIn.template.html'
 };
