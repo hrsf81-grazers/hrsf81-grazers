@@ -1,8 +1,9 @@
 <div flex layout="column" layout-padding class="container">
-  <h3>{{$ctrl.event.name}}</h3>
-  <p class="address">{{$ctrl.event.location}}</p>
-  <h4>Event Schedule</h4>
-  <schedule-display schedule="$ctrl.eventSchedule"></schedule-display>
-  <h4 ng-if="$ctrl.groupSchedule">Group Schedule</h4>
-  <schedule-display schedule="$ctrl.groupSchedule"></schedule-display>
+  <div class="event-info-card">
+    <h1 class="md-headline">{{$ctrl.event.name}}</h1>
+    <h2 class="md-title">October 9 - 10, 2017</h2>
+    <h3>{{$ctrl.event.location}}</h3>
+  </div>
+  <schedule-display heading="Event" schedule="$ctrl.eventSchedule"></schedule-display>
+  <schedule-display ng-if="$ctrl.groupSchedule" heading="Group" schedule="$ctrl.groupSchedule"></schedule-display>
 </div>
