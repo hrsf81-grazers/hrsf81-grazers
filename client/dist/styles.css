@@ -17,34 +17,3 @@ body, .container {
   height: 100vh;
   overflow: scroll;
 }
-
-/*.control-panel-item:hover {
-  cursor: pointer;
-  color: blue;
-}*/
-
-.message-display {
-  flex-grow: 1;
-  overflow: scroll;
-}
-
-ul#messages {
-  list-style: none;
-  padding: 0px;
-}
-
-li.message {
-  border: 1px solid grey;
-  border-radius: 3px;
-  margin: 10px;
-  padding: 10px;
-}
-
-/*#send-message-form {
-  bottom: 10px;
-  left: 0px;
-  width: 100%;
-  border-top: 1px solid grey;
-  padding: 20px;
-  flex-grow: 0;
-}*/
