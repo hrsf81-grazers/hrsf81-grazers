@@ -9,9 +9,14 @@
     <label for="compose-message-title">Do you want an announcement heading?</label>
     <input id="compose-message-title" autocomplete="off" ng-model="$ctrl.messageTitle"/>
   </md-input-container>
-  <md-input-container>
+  <md-input-container ng-if="$ctrl.user.role === 'organizer'">
     <label for="compose-message-body">Message</label>
     <textarea id="compose-message-body" required rows="3" placeholder="What is your announcement?" ng-model="$ctrl.messageBody"></textarea>
   </md-input-container>
-  <md-button type="submit" class="md-accent md-raised">Send Announcement</md-button>
+  <md-button type="submit" class="md-accent md-raised" ng-if="$ctrl.user.role === 'organizer'">Send Announcement</md-button>
+  <md-input-container ng-if="$ctrl.user.role !== 'organizer'">
+    <label for="compose-message-body">Message</label>
+    <textarea id="compose-message-body" required placeholder="Something to tell or ask the group?" ng-model="$ctrl.messageBody"></textarea>
+  </md-input-container>
+  <md-button type="submit" class="md-accent md-raised" ng-if="$ctrl.user.role !== 'organizer'">Send Message</md-button>
 </form>

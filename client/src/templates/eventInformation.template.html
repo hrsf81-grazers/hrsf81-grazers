@@ -1,9 +1,15 @@
-<div flex layout="column" layout-padding class="container">
+<div flex layout="column" layout-align="start" layout-padding class="container">
   <div class="event-info-card">
     <h1 class="md-headline">{{$ctrl.event.name}}</h1>
     <h2 class="md-title">October 9 - 10, 2017</h2>
     <h3>{{$ctrl.event.location}}</h3>
   </div>
-  <schedule-display ng-if="$ctrl.groupSchedule" heading="Group" schedule="$ctrl.groupSchedule"></schedule-display>
-  <schedule-display heading="Event" schedule="$ctrl.eventSchedule"></schedule-display>
+  <div>
+    <div flex layout="row" layout-align="center center">
+      <md-button flex="50" ng-if="$ctrl.groupSchedule" ng-click="$ctrl.showSchedule('group')">Group Schedule</md-button>
+      <md-button flex="50" ng-click="$ctrl.showSchedule('event')">Event Schedule</md-button>
+    </div>
+    <schedule-display ng-if="$ctrl.groupSchedule && $ctrl.displayedSchedule === 'group'" schedule="$ctrl.groupSchedule"></schedule-display>
+    <schedule-display ng-if="$ctrl.displayedSchedule === 'event'" schedule="$ctrl.eventSchedule"></schedule-display>
+  </div>
 </div>
