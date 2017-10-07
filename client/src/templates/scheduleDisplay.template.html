@@ -1,13 +1,20 @@
 <div flex>
   <h4>{{$ctrl.heading}} Schedule</h4>
-  <div class="schedule-day" ng-repeat="day in $ctrl.schedule.days track by $index">
-    <p class="schedule-date">{{day.date}}</p>
-    <ul>
-      <li ng-repeat="appointment in day.timetable track by $index">
-        <div>Time: {{appointment.time}}</div>
-        <div>Activity: {{appointment.activity}}</div>
-        <div>Location: {{appointment.location}}</div>
-      </li>
-    </ul>
+  <md-tabs md-selected="selectedIndex" md-dynamic-height md-border-bottom>
+    <md-tab ng-repeat="day in $ctrl.schedule.days track by $index">
+      <md-tab-label>{{day.date}}</md-tab-label>
+      <md-tab-body>
+        <md-list>
+          <md-list-item class="md-3-line" ng-repeat="appointment in day.timetable track by $index">
+            <div class="md-list-item-text">
+              <h4 class="md-subhead">Time: {{appointment.time}}</h4>
+              <h4 class="md-subhead">Activity: {{appointment.activity}}</h4>
+              <p class="md-body-2">Location: {{appointment.location}}</p>
+            </div>
+          </md-list-item>
+        </md-list>
+      </md-tab-body>
+    </md-tab>
   </div>
+  </md-tabs>
 </div>
