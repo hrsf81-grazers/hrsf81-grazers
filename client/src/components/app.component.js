@@ -1,5 +1,5 @@
 module.exports = {
   template: `
-    <div ng-view></div>
+    <div ng-view class="container"></div>
 `
 };

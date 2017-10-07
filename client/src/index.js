@@ -8,7 +8,7 @@ angular.module('eventHUD', ['ngRoute', 'ngMaterial'])
   .config(($routeProvider, $locationProvider) => {
     $routeProvider
       .when('/', {
-        template: '<sign-in class="sign-in" sign-in="$resolve.signIn"></sign-in>',
+        template: '<sign-in sign-in="$resolve.signIn"></sign-in>',
         resolve: {
           signIn: signin => signin.submit()
         }
