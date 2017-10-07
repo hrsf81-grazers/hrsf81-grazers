@@ -1,25 +1,15 @@
-body {
+body, .container {
   height: 100vh;
+  background-color: #ffffff;
 }
 
-.sign-in {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.signin {
+  background-color: #009fb7;
+  background: radial-gradient(#00c3d1, #009fb7);
 }
 
-.container {
-  position: relative;
-  height: 100vh;
-  /*display: flex;
-  flex-direction: column;*/
-}
-
-.control-panel {
-  background-color: #ebebeb;
-  height: 100vh;
+.signin-form {
+  background-color: #ffffff;
 }
 
 .right-sidebar {
@@ -28,15 +18,10 @@ body {
   overflow: scroll;
 }
 
-.control-panel-list {
-  padding: 0px;
-  list-style: none;
-}
-
-.control-panel-item:hover {
+/*.control-panel-item:hover {
   cursor: pointer;
   color: blue;
-}
+}*/
 
 .message-display {
   flex-grow: 1;
@@ -55,16 +40,11 @@ li.message {
   padding: 10px;
 }
 
-#send-message-form {
+/*#send-message-form {
   bottom: 10px;
   left: 0px;
   width: 100%;
   border-top: 1px solid grey;
   padding: 20px;
   flex-grow: 0;
-}
-
-.form-input {
-  display: block;
-  margin: 5px;
-}
+}*/

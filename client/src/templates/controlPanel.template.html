@@ -1,10 +1,10 @@
-<div class="control-panel col-md-2">
-  <div class="active-user">{{$ctrl.user.firstName}} {{$ctrl.user.lastName}}</div>
-  <ul class="control-panel-list">
+<div flex layout="column" layout-padding class="container">
+  <h4 class="md-title">{{$ctrl.user.firstName}} {{$ctrl.user.lastName}}</h4>
+  <md-list>
     <control-panel-item label="$ctrl.event" view="broadcast" on-click="$ctrl.changeView"></control-panel-item>
     <control-panel-item ng-repeat="group in $ctrl.groups track by group.id"
       label="group.name"
       view="manageGroup"
       on-click="$ctrl.changeView"></control-panel-item>
-  </ul>
+  </md-list>
 </div>
