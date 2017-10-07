@@ -1,4 +1,5 @@
-<div class="schedule">
+<div flex>
+  <h4>{{$ctrl.heading}} Schedule</h4>
   <div class="schedule-day" ng-repeat="day in $ctrl.schedule.days track by $index">
     <p class="schedule-date">{{day.date}}</p>
     <ul>
