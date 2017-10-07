@@ -11,11 +11,29 @@ body, .container {
 
 .signin-form {
   background-color: #ffffff;
+  height: 400px;
+  width: 500px;
 }
+
+/* Event Information Component Styles */
 
 .event-info-card {
   background-image: url('https://thumbs.dreamstime.com/z/sheep-grazing-farmland-cartoon-poster-domestic-breeding-raising-farm-pasture-funny-ram-lamb-vector-illustration-79520937.jpg');
   background-size: cover;
   background-position: 0% 75%;
   text-align: center;
+}
+
+.schedule-button {
+  padding: 0;
+  margin: 0;
+}
+
+.selected {
+  background-color: #a2e9ee;
+}
+
+.schedule {
+  padding: 0;
+  padding-top: 8px;
 }
