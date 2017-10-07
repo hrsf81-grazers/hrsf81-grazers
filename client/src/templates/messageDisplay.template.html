@@ -1,3 +1,10 @@
-<div flex layout="column">
-  <md-list id="messages"></md-list>
+<div flex layout="column" layout-padding>
+  <md-list id="messages">
+    <md-list-item class="md-3-line md-long-text" md-whiteframe="7" ng-repeat="message in $ctrl.messages track by $index">
+      <div class="md-list-item-text">
+        <h3 class="md-title">{{message.fromName}}</h3>
+        <h3 class="md-headline">{{message.title}}</h3>
+        <p class="md-body-2">{{message.text}}</p>
+    </md-list-item>
+  </md-list>
 </div>
