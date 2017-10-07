@@ -1,6 +1,7 @@
 module.exports = {
   bindings: {
-    user: '<'
+    user: '<',
+    group: '<'
   },
   templateUrl: 'eventBroadcast.template.html'
 };
