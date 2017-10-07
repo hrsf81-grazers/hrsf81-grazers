@@ -1,5 +1,4 @@
-<div flex>
-  <h4>{{$ctrl.heading}} Schedule</h4>
+<md-content flex>
   <md-tabs md-selected="selectedIndex" md-dynamic-height md-border-bottom>
     <md-tab ng-repeat="day in $ctrl.schedule.days track by $index">
       <md-tab-label>{{day.date}}</md-tab-label>
@@ -17,4 +16,4 @@
     </md-tab>
   </div>
   </md-tabs>
-</div>
+</md-content>
