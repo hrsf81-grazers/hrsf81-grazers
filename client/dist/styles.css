@@ -12,6 +12,13 @@ body, .container {
   background-color: #ffffff;
 }
 
+.event-info-card {
+  background-image: url('https://thumbs.dreamstime.com/z/sheep-grazing-farmland-cartoon-poster-domestic-breeding-raising-farm-pasture-funny-ram-lamb-vector-illustration-79520937.jpg');
+  background-size: cover;
+  background-position: 0% 75%;
+  text-align: center;
+}
+
 .right-sidebar {
   background-color: #ebebeb;
   height: 100vh;
