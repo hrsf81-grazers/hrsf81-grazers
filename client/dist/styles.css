@@ -1,6 +1,7 @@
 body, .container {
   height: 100vh;
   background-color: #ffffff;
+  overflow: scroll;
 }
 
 .signin {
