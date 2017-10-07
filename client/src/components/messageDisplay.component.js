@@ -27,12 +27,6 @@ module.exports = {
       if (isBroadcast || message.toIds.includes(this.group.id)) {
         this.messages.push(message);
       }
-      // const data = JSON.parse(event.data);
-      // const isBroadcast = this.user.role === 'organizer' && data.fromId === this.user.id;
-      // if (isBroadcast || data.toIds.includes(this.group.id)) {
-      //   const message = this.displayMessage(data);
-      //   document.getElementById('messages').appendChild(message);
-      // }
     };
 
     websockets.receive(this.receive);
