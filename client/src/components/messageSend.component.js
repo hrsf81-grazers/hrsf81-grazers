@@ -36,7 +36,8 @@ module.exports = {
         title: this.messageTitle,
         text: this.messageBody,
         fromName: `${this.user.firstName} ${this.user.lastName}`,
-        fromId: this.user.id
+        fromId: this.user.id,
+        eventId: 1
       }));
       this.clearInputs();
     };
