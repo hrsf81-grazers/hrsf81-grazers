@@ -1,7 +1,8 @@
 <form id="messageSend" flex layout="column" layout-padding ng-submit="$ctrl.sendMessage()">
   <div ng-if="$ctrl.user.role === 'organizer'">
-    <label for="group-select">Which groups should this announcement go to?</label>
-    <md-select id="group-select" required multiple ng-model="$ctrl.messageTo" aria-label="Select Groups">
+    <!-- <label for="group-select">Which groups should this announcement go to?</label> -->
+    <md-select id="group-select" required multiple ng-model="$ctrl.messageTo"
+      placeholder="Which groups should this announcement go to?">
       <md-option ng-repeat="group in $ctrl.groups track by group.id" value="{{[group.id, group.name]}}">{{group.name}}</md-option>
     </md-select>
   </div>
@@ -10,13 +11,13 @@
     <input id="compose-message-title" autocomplete="off" ng-model="$ctrl.messageTitle"/>
   </md-input-container>
   <md-input-container ng-if="$ctrl.user.role === 'organizer'">
-    <label for="compose-message-body">Message</label>
-    <textarea id="compose-message-body" required rows="3" placeholder="What is your announcement?" ng-model="$ctrl.messageBody"></textarea>
+    <label for="compose-message-body">What is your announcement?</label>
+    <textarea id="compose-message-body" required rows="3" ng-model="$ctrl.messageBody"></textarea>
   </md-input-container>
   <md-button type="submit" class="md-accent md-raised" ng-if="$ctrl.user.role === 'organizer'">Send Announcement</md-button>
   <md-input-container ng-if="$ctrl.user.role !== 'organizer'">
-    <label for="compose-message-body">Message</label>
-    <textarea id="compose-message-body" required placeholder="Something to tell or ask the group?" ng-model="$ctrl.messageBody"></textarea>
+    <label for="compose-message-body">Something to tell or ask the group?</label>
+    <textarea id="compose-message-body" required ng-model="$ctrl.messageBody"></textarea>
   </md-input-container>
   <md-button type="submit" class="md-accent md-raised" ng-if="$ctrl.user.role !== 'organizer'">Send Message</md-button>
 </form>
