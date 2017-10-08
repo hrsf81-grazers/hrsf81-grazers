@@ -1,11 +1,22 @@
-<label for="compose-message-to" ng-if="$ctrl.user.role === 'organizer'">To</label>
-<form ng-submit="$ctrl.sendMessage()">
-  <select id="group-select" class="form-input" required multiple ng-model="$ctrl.messageTo" ng-if="$ctrl.user.role === 'organizer'">
-    <option ng-repeat="group in $ctrl.groups track by group.id" value="{{[group.id, group.name]}}">{{group.name}}</option>
-  </select>
-  <label for="compose-message-title" ng-if="$ctrl.user.role === 'organizer'">Message Title</label>
-  <input id="compose-message-title" class="form-input" autocomplete="off" ng-model="$ctrl.messageTitle" ng-if="$ctrl.user.role === 'organizer'"/>
-  <label for="compose-message-body">Message</label>
-  <textarea id="compose-message-body" class="form-input" rows="5" cols="75" autocomplete="off" ng-model="$ctrl.messageBody"></textarea>
-  <button>Send</button>
+<form id="messageSend" flex layout="column" layout-padding ng-submit="$ctrl.sendMessage()">
+  <div ng-if="$ctrl.user.role === 'organizer'">
+    <label for="group-select">Which groups should this announcement go to?</label>
+    <md-select id="group-select" required multiple ng-model="$ctrl.messageTo" aria-label="Select Groups">
+      <md-option ng-repeat="group in $ctrl.groups track by group.id" value="{{[group.id, group.name]}}">{{group.name}}</md-option>
+    </md-select>
+  </div>
+  <md-input-container ng-if="$ctrl.user.role === 'organizer'">
+    <label for="compose-message-title">Do you want an announcement heading?</label>
+    <input id="compose-message-title" autocomplete="off" ng-model="$ctrl.messageTitle"/>
+  </md-input-container>
+  <md-input-container ng-if="$ctrl.user.role === 'organizer'">
+    <label for="compose-message-body">Message</label>
+    <textarea id="compose-message-body" required rows="3" placeholder="What is your announcement?" ng-model="$ctrl.messageBody"></textarea>
+  </md-input-container>
+  <md-button type="submit" class="md-accent md-raised" ng-if="$ctrl.user.role === 'organizer'">Send Announcement</md-button>
+  <md-input-container ng-if="$ctrl.user.role !== 'organizer'">
+    <label for="compose-message-body">Message</label>
+    <textarea id="compose-message-body" required placeholder="Something to tell or ask the group?" ng-model="$ctrl.messageBody"></textarea>
+  </md-input-container>
+  <md-button type="submit" class="md-accent md-raised" ng-if="$ctrl.user.role !== 'organizer'">Send Message</md-button>
 </form>

@@ -4,6 +4,8 @@ module.exports = {
     group: '<'
   },
   controller(websockets) {
+    this.messages = [];
+
     this.displayMessage = (message) => {
       const messageNode = document.createElement('li');
       messageNode.className = 'message';
@@ -20,11 +22,10 @@ module.exports = {
 
     this.receive = (event) => {
       console.log(`Message from the server ${event.data}`);
-      const data = JSON.parse(event.data);
-      const isBroadcast = this.user.role === 'organizer' && data.fromId === this.user.id;
-      if (isBroadcast || data.toIds.includes(this.group.id)) {
-        const message = this.displayMessage(data);
-        document.getElementById('messages').appendChild(message);
+      const message = JSON.parse(event.data);
+      const isBroadcast = this.user.role === 'organizer' && message.fromId === this.user.id;
+      if (isBroadcast || message.toIds.includes(this.group.id)) {
+        this.messages.push(message);
       }
     };
 

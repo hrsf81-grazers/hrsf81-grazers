@@ -1,3 +1,5 @@
-<group-membership user="$ctrl.user" group="$ctrl.group"></group-membership>
-<group-updates user="$ctrl.user" group="$ctrl.group"></group-updates>
-<event-information eventId="$ctrl.eventId" group="$ctrl.group"></event-information>
+<div flex layout="row" class="container">
+  <control-panel flex="20" user="$ctrl.user" group="$ctrl.group"></control-panel>
+  <event-broadcast flex="40" user="$ctrl.user" group="$ctrl.group"></event-broadcast>
+  <event-information flex="40" eventId="$ctrl.eventId" group="$ctrl.group"></event-information>
+</div>

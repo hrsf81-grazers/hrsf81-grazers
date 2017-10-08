@@ -4,6 +4,8 @@ module.exports = {
     group: '<'
   },
   controller($http) {
+    this.displayedSchedule = 'event';
+
     this.getSchedule = scheduleId =>
       $http({
         method: 'GET',
@@ -17,9 +19,14 @@ module.exports = {
         this.getSchedule(this.group.scheduleId)
           .then((schedule) => {
             this.groupSchedule = schedule;
+            this.displayedSchedule = 'group';
           })
           .catch(console.error);
       }
+    };
+
+    this.showSchedule = (scheduleType) => {
+      this.displayedSchedule = scheduleType;
     };
 
     $http({

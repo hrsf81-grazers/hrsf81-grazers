@@ -1,8 +1,13 @@
-<div class="container col-md-7">
-  <div class="message-display">
-    <message-display user="$ctrl.user"></message-display>
+<div flex layout="column" class="container">
+  <div ng-if="$ctrl.user.role !== 'organizer'">
+    <h3>{{$ctrl.group.name}}</h3>
+    <md-divider></md-divider>
   </div>
-  <div id="send-message-form">
-    <message-send user="$ctrl.user"></message-send>
+  <md-content flex>
+    <message-display user="$ctrl.user" group="$ctrl.group"></message-display>
+  </md-content>
+  <md-divider></md-divider>
+  <div>
+    <message-send user="$ctrl.user" group="$ctrl.group"></message-send>
   </div>
 </div>
