@@ -2,7 +2,6 @@ module.exports = {
 
   events: [
     {
-      id: 1,
       name: 'Grazers Con',
       location: '944 Market Street, 8th floor, San Francisco, CA 94102',
       organizerId: 1,
@@ -12,27 +11,29 @@ module.exports = {
 
   groups: [
     {
-      id: 1,
-      name: 'Volunteers',
-      type: 'staff',
+      name: 'Organizers',
+      type: 'admin',
       eventId: 1,
       scheduleId: 3
     },
     {
-      id: 2,
       name: 'Greeters',
       type: 'staff',
       eventId: 1,
       scheduleId: 2
     },
     {
-      id: 3,
+      name: 'Volunteers',
+      type: 'staff',
+      eventId: 1,
+      scheduleId: 3
+    },
+    {
       name: 'Tech Support',
       type: 'staff',
       eventId: 1
     },
     {
-      id: 4,
       name: 'General Admissions',
       type: 'attendee',
       eventId: 1
@@ -41,7 +42,6 @@ module.exports = {
 
   users: [
     {
-      id: 1,
       role: 'organizer',
       firstName: 'Laurent',
       lastName: 'Frazier',
@@ -49,7 +49,6 @@ module.exports = {
       phone: '555-235-9802'
     },
     {
-      id: 2,
       role: 'staff',
       firstName: 'David',
       lastName: 'Friedman',
@@ -57,7 +56,6 @@ module.exports = {
       phone: '555-492-1763'
     },
     {
-      id: 3,
       role: 'staff',
       firstName: 'Austin',
       lastName: 'Sloane',
@@ -65,7 +63,6 @@ module.exports = {
       phone: '555-687-9321'
     },
     {
-      id: 4,
       role: 'staff',
       firstName: 'Haruki',
       lastName: 'Dante',
@@ -73,7 +70,6 @@ module.exports = {
       phone: '555-234-0745'
     },
     {
-      id: 5,
       role: 'attendee',
       firstName: 'Christine',
       lastName: 'Wong',
@@ -81,12 +77,73 @@ module.exports = {
       phone: '555-299-4236'
     },
     {
-      id: 6,
       role: 'staff',
       firstName: 'Rafiqa',
       lastName: 'Chukwudi',
       email: 'rafiqa@grazerscon.com',
       phone: '555-596-4104'
+    }
+  ],
+
+  userGroups: [
+    {
+      groupId: 1,
+      userId: 1
+    },
+    {
+      groupId: 2,
+      userId: 3
+    },
+    {
+      groupId: 2,
+      userId: 4
+    },
+    {
+      groupId: 3,
+      userId: 2
+    },
+    {
+      groupId: 1,
+      userId: 5
+    },
+    {
+      groupId: 2,
+      userId: 6
+    }
+  ],
+
+  messages: [
+    {
+      fromId: 3,
+      toIds: [2],
+      title: '',
+      text: 'I just signed in for lemonade stand duty and we are out of lemons!',
+      eventId: 1,
+      timestamp: new Date()
+    },
+    {
+      fromId: 1,
+      toIds: [1, 2],
+      title: 'Room Change',
+      text: 'The "Guilt-Free Grazing" seminar has moved from the Grand Ballroom to the Autumm room.',
+      eventId: 1,
+      timestamp: new Date()
+    },
+    {
+      fromId: 1,
+      toIds: [3],
+      title: 'Room Change',
+      text: 'The "Guilt-Free Grazing" seminar has moved from the Grand Ballroom to the Autumm room.',
+      eventId: 1,
+      timestamp: new Date()
+    },
+    {
+      fromId: 1,
+      toIds: [4],
+      title: 'Welcome!',
+      text: 'Post your memories to Instagram with hashtag #GrazerCon2017. Daily prizes for best photo!',
+      eventId: 1,
+      timestamp: new Date()
     }
   ]
 };

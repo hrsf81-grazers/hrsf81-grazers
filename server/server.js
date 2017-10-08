@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const db = require('../database/index');
 
 const app = express();
 const server = require('http').Server(app);
@@ -30,6 +31,15 @@ wss.on('connection', (ws) => {
   console.log('New client connected');
   ws.on('message', (msg) => {
     console.log(`Received ${msg}`);
+    // rest operator for destructuring objects is not yet supported in Node
+    const msgRecord = Object.assign({ timestamp: new Date() }, JSON.parse(msg));
+    delete msgRecord.fromName;
+    delete msgRecord.toNames;
+    db.addMessage(msgRecord)
+      .then(console.log)
+      .catch((err) => {
+        console.error(`ERROR: message was not saved to the DB (${err})`);
+      });
     wss.clients.forEach((client) => {
       if (client.readyState === WebSocket.OPEN) {
         client.send(msg);

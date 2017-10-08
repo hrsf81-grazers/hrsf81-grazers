@@ -13,6 +13,9 @@ pool.query('CREATE TABLE IF NOT EXISTS users (id SERIAL UNIQUE NOT NULL PRIMARY 
   .then(() => Promise.all(seed.users.map(user => db.addUser(user))))
   .then(() => Promise.all(seed.events.map(event => db.addEvent(event))))
   .then(() => Promise.all(seed.groups.map(group => db.addGroup(group))))
+  .then(() => Promise.all(seed.userGroups.map(userGroup =>
+    db.addUserToGroup(userGroup.groupId, userGroup.userId))))
+  .then(() => Promise.all(seed.messages.map(message => db.addMessage(message))))
   .then(() => {
     console.log('DB: tables created and seeded with data');
   })
