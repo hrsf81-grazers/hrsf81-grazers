@@ -29,8 +29,7 @@ module.exports = {
       id: 3,
       name: 'Tech Support',
       type: 'staff',
-      eventId: 1,
-      scheduleId: 2
+      eventId: 1
     },
     {
       id: 4,

@@ -13,15 +13,23 @@ body, .container {
   background-color: #ffffff;
   height: 400px;
   width: 500px;
+  padding: 50px;
 }
+
+/* Control Panel Component Styles */
+
+/* Event Broadcast Component Styles */
+
 
 /* Event Information Component Styles */
 
 .event-info-card {
-  background-image: url('https://thumbs.dreamstime.com/z/sheep-grazing-farmland-cartoon-poster-domestic-breeding-raising-farm-pasture-funny-ram-lamb-vector-illustration-79520937.jpg');
+  background-image: url('http://freedesignfile.com/upload/2014/07/Cartoon-dairy-cow-and-natural-landscapes-vector.jpg');
   background-size: cover;
-  background-position: 0% 75%;
+  background-position: 0% 85%;
+  text-shadow: 0 0 3px #ffffff;
   text-align: center;
+  height: 20%;
 }
 
 .schedule-button {

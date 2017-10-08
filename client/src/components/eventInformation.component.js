@@ -19,7 +19,7 @@ module.exports = {
         this.getSchedule(this.group.scheduleId)
           .then((schedule) => {
             this.groupSchedule = schedule;
-            this.displayedSchedule = 'group';
+            this.displayedSchedule = schedule ? 'group' : 'event';
           })
           .catch(console.error);
       }
