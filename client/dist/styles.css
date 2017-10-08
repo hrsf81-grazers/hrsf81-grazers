@@ -13,7 +13,13 @@ body, .container {
   background-color: #ffffff;
   height: 400px;
   width: 500px;
+  padding: 50px;
 }
+
+/* Control Panel Component Styles */
+
+/* Event Broadcast Component Styles */
+
 
 /* Event Information Component Styles */
 
