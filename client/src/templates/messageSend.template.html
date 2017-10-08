@@ -1,6 +1,5 @@
 <form id="messageSend" flex layout="column" layout-padding ng-submit="$ctrl.sendMessage()">
   <div ng-if="$ctrl.user.role === 'organizer'">
-    <!-- <label for="group-select">Which groups should this announcement go to?</label> -->
     <md-select id="group-select" required multiple ng-model="$ctrl.messageTo"
       placeholder="Which groups should this announcement go to?">
       <md-option ng-repeat="group in $ctrl.groups track by group.id" value="{{[group.id, group.name]}}">{{group.name}}</md-option>

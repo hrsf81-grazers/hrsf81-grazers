@@ -16,11 +16,6 @@ body, .container {
   padding: 50px;
 }
 
-/* Control Panel Component Styles */
-
-/* Event Broadcast Component Styles */
-
-
 /* Event Information Component Styles */
 
 .event-info-card {
@@ -44,4 +39,11 @@ body, .container {
 .schedule {
   padding: 0;
   padding-top: 8px;
+}
+
+.event-info-card {
+  background-image: url('https://thumbs.dreamstime.com/z/sheep-grazing-farmland-cartoon-poster-domestic-breeding-raising-farm-pasture-funny-ram-lamb-vector-illustration-79520937.jpg');
+  background-size: cover;
+  background-position: 0% 75%;
+  text-align: center;
 }
