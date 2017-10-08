@@ -47,41 +47,17 @@ const addMessage = function(fromUser, toGroup, message, event) {
       [res[0].rows[0].id, res[1].rows[0].id, message.title, message.text, res[2].rows[0].id]));
 };
 
-const getAllUsers = (callback) =>
-  pool.query('SELECT * FROM users', (err, res) => {
-    if (err) {
-      console.log(err.stack)
-    } else {
-      callback(res.rows);
-    }
-});
+const getAllUsers = () =>
+  pool.query('SELECT * FROM users');
 
-const getAllEvents = (callback) =>
-  pool.query('SELECT * FROM events', (err, res) => {
-    if (err) {
-      console.log(err.stack)
-    } else {
-      callback(res.rows);
-    }
-});
+const getAllEvents = () =>
+  pool.query('SELECT * FROM events');
 
-const getAllGroups = (callback) =>
-  pool.query('SELECT * FROM groups', (err, res) => {
-    if (err) {
-      console.log(err.stack)
-    } else {
-      callback(res.rows);
-    }
-});
+const getAllGroups = () =>
+  pool.query('SELECT * FROM groups');
 
-const getAllMessages = (callback) =>
-  pool.query('SELECT * FROM messages', (err, res) => {
-    if (err) {
-      console.log(err.stack)
-    } else {
-      callback(res.rows);
-    }
-});
+const getAllMessages = () =>
+  pool.query('SELECT * FROM messages');
 
 module.exports = {
   addUser,
@@ -94,4 +70,3 @@ module.exports = {
   getAllGroups,
   getAllMessages
 };
-
