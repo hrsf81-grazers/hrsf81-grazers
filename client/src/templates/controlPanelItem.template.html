@@ -1,3 +1,4 @@
-<md-list-item>
-  <md-button ng-click="$ctrl.onClick($ctrl.view)">{{$ctrl.label}}</md-button>
+<md-list-item flex>
+  <div flex="100" class="md-button md-no-style" ng-click="$ctrl.onClick($ctrl.view)"
+    ng-class="{'selected': $ctrl.view === 'broadcast'}">{{$ctrl.label}}</div>
 </md-list-item>

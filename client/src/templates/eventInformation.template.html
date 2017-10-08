@@ -5,10 +5,10 @@
     <h3>{{$ctrl.event.location}}</h3>
   </div>
   <div class="schedule">
-    <div flex layout="row" layout-align="center center">
-      <md-button class="schedule-button" flex="50" ng-if="$ctrl.groupSchedule" ng-click="$ctrl.showSchedule('group')"
+    <div flex layout="row" layout-align="start center">
+      <md-button class="schedule-button" flex="auto" ng-if="$ctrl.groupSchedule" ng-click="$ctrl.showSchedule('group')"
         ng-class="{'selected': $ctrl.displayedSchedule === 'group'}">Group Schedule</md-button>
-      <md-button class="schedule-button" flex="50" ng-click="$ctrl.showSchedule('event')"
+      <md-button class="schedule-button" flex="auto" ng-click="$ctrl.showSchedule('event')"
         ng-class="{'selected': $ctrl.displayedSchedule === 'event'}">Event Schedule</md-button>
     </div>
     <schedule-display ng-if="$ctrl.groupSchedule && $ctrl.displayedSchedule === 'group'" schedule="$ctrl.groupSchedule"></schedule-display>
