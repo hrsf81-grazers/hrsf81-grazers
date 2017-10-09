@@ -27,25 +27,32 @@ app.use('/user', user);
 app.use('/messages', messages);
 app.use('/schedule', schedule);
 
+const wsKeepAlive = () => {
+  wss.clients.forEach((client) => {
+    client.send('KeepAlive');
+  });
+};
+
 wss.on('connection', (ws) => {
   console.log('New client connected');
   ws.on('message', (msg) => {
     console.log(`Received ${msg}`);
-    // rest operator for destructuring objects is not yet supported in Node
-    const msgRecord = Object.assign({ timestamp: new Date() }, JSON.parse(msg));
-    delete msgRecord.fromName;
-    delete msgRecord.toNames;
-    db.addMessage(msgRecord)
-      .then(console.log)
-      .catch((err) => {
-        console.error(`ERROR: message was not saved to the DB (${err})`);
+    if (msg !== 'KeepAlive') {
+      // rest operator for destructuring objects is not yet supported in Node
+      const msgRecord = Object.assign({ timestamp: new Date() }, JSON.parse(msg));
+      delete msgRecord.fromName;
+      delete msgRecord.toNames;
+      db.addMessage(msgRecord)
+        .catch((err) => { console.error(`ERROR: message was not saved to the DB (${err})`); });
+      wss.clients.forEach((client) => {
+        if (client.readyState === WebSocket.OPEN) {
+          client.send(msg);
+        }
       });
-    wss.clients.forEach((client) => {
-      if (client.readyState === WebSocket.OPEN) {
-        client.send(msg);
-      }
-    });
+    }
   });
+
+  setInterval(wsKeepAlive, 2000);
 });
 
 app.route('/events')
