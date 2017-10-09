@@ -4,6 +4,12 @@ body, .container {
   overflow: scroll;
 }
 
+md-content {
+  background-color: #ffffff;
+}
+
+/* Sign In Component Styles */
+
 .signin {
   background-color: #009fb7;
   background: radial-gradient(#00c3d1, #009fb7);
@@ -16,6 +22,61 @@ body, .container {
   padding: 50px;
 }
 
+/* Control Panel Component Styles */
+
+.control-panel {
+  background-color: #a2e9ee;
+}
+
+.selected-item {
+  background-color: #009fb7;
+  color: #ffffff;
+}
+
+/* Message Display Styles */
+
+.message-display-heading {
+  margin: 10px 10px 0px 10px;
+}
+
+md-list-item.md-3-line.md-long-text {
+  margin-top: 0px;
+}
+
+.message-card {
+  padding: 10px;
+}
+
+.highlight {
+  background-color: #ffdce8;
+}
+
+.message-from {
+  font-weight: bold;
+}
+
+.message-title {
+  font-size: 1.2em;
+}
+
+.message-timestamp {
+  margin: auto 10px;
+}
+
+.message-item-row {
+  margin: 10px auto;
+}
+
+.recipient {
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 5px;
+  background-color: #c9d1d5;
+  border: solid 1px transparent;
+  border-radius: 5px;
+  font-variant: small-caps;
+}
+
 /* Event Information Component Styles */
 
 .event-info-card {
@@ -25,20 +86,6 @@ body, .container {
   text-shadow: 0 0 3px #ffffff;
   text-align: center;
   height: 20%;
-}
-
-.schedule-button {
-  padding: 0;
-  margin: 0;
-}
-
-.selected {
-  background-color: #a2e9ee;
-}
-
-.schedule {
-  padding: 0;
-  padding-top: 8px;
 }
 
 .schedule-button {
