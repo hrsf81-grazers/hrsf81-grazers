@@ -4,6 +4,7 @@
     <control-panel-item flex label="$ctrl.event" view="broadcast" on-click="$ctrl.changeView"></control-panel-item>
     <control-panel-item flex ng-repeat="group in $ctrl.groups track by group.id"
       label="group.name"
+      group-id="group.id"
       view="manageGroup"
       on-click="$ctrl.changeView"></control-panel-item>
   </md-list>

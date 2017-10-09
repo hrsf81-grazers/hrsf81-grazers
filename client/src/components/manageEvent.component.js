@@ -7,8 +7,9 @@ module.exports = {
     this.eventId = 1;
     this.view = 'broadcast';
 
-    this.changeView = (view) => {
+    this.changeView = (view, id) => {
       this.view = view;
+      this.groupId = id || null;
     };
   },
   templateUrl: 'manageEvent.template.html'

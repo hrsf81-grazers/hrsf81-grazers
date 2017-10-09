@@ -1,5 +1,5 @@
 <md-list-item flex>
-  <div flex="100" class="md-button md-no-style control-panel-item" ng-click="$ctrl.onClick($ctrl.view)"
+  <div flex="100" class="md-button md-no-style control-panel-item" ng-click="$ctrl.onClick($ctrl.view, $ctrl.groupId)"
     ng-class="{'selected-item': $ctrl.view === 'broadcast'}">
     <i class="fa fa-bullhorn fa-lg" ng-if="$ctrl.view === 'broadcast'"></i>
     <i class="fa fa-users fa-lg" ng-if="$ctrl.view === 'manageGroup'"></i>   {{$ctrl.label}}

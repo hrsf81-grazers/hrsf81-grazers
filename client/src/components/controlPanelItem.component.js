@@ -2,7 +2,8 @@ module.exports = {
   bindings: {
     label: '<',
     view: '@',
-    onClick: '<'
+    onClick: '<',
+    groupId: '<'
   },
   templateUrl: 'controlPanelItem.template.html'
 };

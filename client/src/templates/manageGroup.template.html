@@ -1,4 +1,5 @@
 <div flex layout="column" class="container">
+  <h1>Numbers{{ctrl.group}}</h1>
   <h3 class="md-headline message-display-heading">Group Members</h3>
   <md-content>
     <div flex layout="column">
@@ -17,7 +18,7 @@
   </md-content>
   <md-divider></md-divider>
   <div>
-    <form id="addUser" flex layout="column" layout-padding ng-submit="$ctrl.addUser">
+    <form id="addUser" flex layout="column" layout-padding ng-submit="$ctrl.addUser()">
       <md-input-container>
         <label for="new-user-first-name">New user's first name?</label>
         <input id="new-user-first-name" autocomplete="off" ng-model="$ctrl.firstName"/>
