@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const db = require('../database/index');
+require('../database/setup.js');
 
 const app = express();
 const server = require('http').Server(app);
