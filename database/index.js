@@ -3,24 +3,23 @@ const config = require('./config');
 
 const pool = new Pool(config);
 
-const addUser = function(user) {
-  return pool.query('INSERT INTO users(role, firstname, lastname, email, phonenumber) values($1, $2, $3, $4, $5)',
-    [user.role, user.firstname, user.lastname, user.email, user.phonenumber]);
-};
+const addUser = user =>
+  pool.query(
+    'INSERT INTO users(role, firstname, lastname, email, phonenumber) values($1, $2, $3, $4, $5)',
+    [user.role, user.firstName, user.lastName, user.email, user.phone]
+  );
 
-const addEvent = function(event, organizer) {
-  return pool.query('SELECT id FROM users WHERE users.firstname = $1 AND users.lastname = $2', [organizer.firstname, organizer.lastname])
-  .then((organizer) =>
+const addEvent = event =>
+  pool.query(
+    'INSERT INTO events(name, location, organizer_id, schedule_id) values($1, $2, $3, $4)',
+    [event.name, event.location, event.organizerId, event.scheduleId]
+  );
 
-    pool.query('INSERT INTO events(name, location, organizer_id) values($1, $2, $3)', [event.name, event.location, organizer.rows[0].id]));
-};
-
-const addGroup = function(group, event) {
-  return pool.query('SELECT id FROM events WHERE events.name = $1 AND events.location = $2', [event.name, event.location])
-  .then((event) =>
-
-    pool.query('INSERT INTO groups(name, type, event_id) values($1, $2, $3)', [group.name, group.type, event.rows[0].id]));
-};
+const addGroup = group =>
+  pool.query(
+    'INSERT INTO groups(name, type, event_id, schedule_id) values($1, $2, $3, $4)',
+    [group.name, group.type, group.eventId, group.scheduleId]
+  );
 
 const addUserToGroup = function(user, group) {
   var groupID = pool.query('SELECT id FROM groups WHERE groups.name = $1', [group.name]);
