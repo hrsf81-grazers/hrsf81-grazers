@@ -15,7 +15,7 @@ function websockets() {
     });
   };
 
-  setInterval(this.send.bind(this, 'KeepAlive'), 2000);
+  // setInterval(this.send.bind(this, 'KeepAlive'), 2000);
 }
 
 module.exports = websockets;

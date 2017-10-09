@@ -23,7 +23,7 @@ module.exports = {
             this.messages = data.map((message) => {
               message.fromName = `${message.firstname} ${message.lastname}`;
               message.recipients = message.togroups.split('|');
-              message.sendDate = new Date(Date.parse(message.date_time));
+              message.timestamp = new Date(Date.parse(message.date_time));
               return message;
             });
           })
@@ -31,13 +31,14 @@ module.exports = {
       }
     };
 
-
     this.receive = (event) => {
       console.log(`Message from the server ${event.data}`);
       const message = JSON.parse(event.data);
+      message.timestamp = new Date();
       const isBroadcast = this.user.role === 'organizer' && message.fromId === this.user.id;
       if (isBroadcast || message.toIds.includes(this.group.id)) {
-        this.messages.push(message);
+        console.log('message for me!');
+        this.messages = this.messages.concat(message);
       }
     };
 

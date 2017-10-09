@@ -6,7 +6,7 @@
       <div class="md-list-item-text message-card">
         <div class="message-item-row">
           <span class="message-from">{{message.fromName}}</span>
-          <span class="md-caption message-timestamp">{{message.sendDate.toString()}}</span>
+          <span class="md-caption message-timestamp">{{message.timestamp.toString()}}</span>
           <i class="fa fa-bullhorn fa-2x" ng-if="message.fromName === 'Laurent Frazier' && $ctrl.user.role !== 'organizer'"></i>
         </div>
           <div class="message-title message-item-row">{{message.title}}</div>

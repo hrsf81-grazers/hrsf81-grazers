@@ -17,9 +17,16 @@ module.exports = {
     };
 
     this.showSendMessageDialog = (ev) => {
+      let template;
+      if (this.user.role === 'organizer') {
+        template = 'messageSendDialog.template.html';
+      } else {
+        template = 'messageSendStaffDialog.template.html';
+      }
+      console.log(template);
       $mdDialog.show({
         controller: $scope.DialogController,
-        templateUrl: 'messageSendDialog.template.html',
+        templateUrl: template,
         preserveScope: true,
         targetEvent: ev,
         clickOutsideToClose: true,
