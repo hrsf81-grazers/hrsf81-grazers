@@ -9,13 +9,11 @@ function websockets() {
     this.socket.addEventListener('message', (event) => {
       if (event.data !== 'KeepAlive') {
         callback(event);
-      } else {
-        console.log('Staying alive!');
       }
     });
   };
 
-  setInterval(this.send.bind(this, 'KeepAlive'), 2000);
+  // setInterval(this.send.bind(this, 'KeepAlive'), 2000);
 }
 
 module.exports = websockets;
