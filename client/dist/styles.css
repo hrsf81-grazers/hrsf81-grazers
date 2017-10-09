@@ -41,6 +41,7 @@ md-content {
 
 md-list-item.md-3-line.md-long-text {
   margin-top: 0px;
+  border-radius: 2px;
 }
 
 .message-card {
@@ -48,7 +49,7 @@ md-list-item.md-3-line.md-long-text {
 }
 
 .highlight {
-  background-color: #ffdce8;
+  border-left: solid 2px rgb(255,64,129);
 }
 
 .message-from {

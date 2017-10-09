@@ -7,6 +7,10 @@
           <md-option ng-repeat="user in $ctrl.users track by user.id" value={{user}}>{{user.firstName}} {{user.lastName}}</md-option>
         </md-select>
       </md-input-container>
+      <md-input-container flex="100">
+        <label for="password">&nbsp;&nbsp;Password</label>
+        <input id="password" autocomplete="off" type="password"/>
+      </md-input-container>
       <md-button class="md-accent md-raised" aria-label="Sign In" ng-click="$ctrl.signIn($ctrl.user)">Sign In</md-button>
     </form>
   </div>
