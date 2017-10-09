@@ -6,7 +6,9 @@ module.exports = {
   controller(groups, websockets, $mdDialog, $scope) {
     this.$onChanges = (changesObj) => {
       if (changesObj.group.currentValue || changesObj.user.currentValue) {
-        this.clearInputs();
+        this.messageTitle = '';
+        this.messageBody = '';
+        this.messageTo = this.user.role === 'organizer' ? [] : [JSON.stringify([this.group.id, this.group.name])];
       }
     };
 
