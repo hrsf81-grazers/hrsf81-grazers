@@ -13,7 +13,7 @@
     "build": "webpack",
     "start": "webpack && node server/server.js",
     "ng-test": "karma start",
-    "server-test": "mocha"
+    "server-test": "mocha ./spec/serverSpec.js"
   },
   "dependencies": {
     "angular": "^1.6.6",
