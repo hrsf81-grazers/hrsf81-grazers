@@ -1,3 +1,8 @@
 <div class="container col-md-7">
-  <h3>Placeholder Manage Group Component</h3>
+  <h4 class="md-title"> Group Members</h4>
+  <md-list ng-if="$ctrl.user.role !== 'organizer'">
+    <md-list-item ng-repeat="member in $ctrl.members track by member.id">
+      <i class="fa fa-user-circle-o fa-lg"></i>&nbsp;<p>{{member.firstName}} {{member.lastName}}<p>
+    </md-list-item>
+  </md-list>
 </div>
