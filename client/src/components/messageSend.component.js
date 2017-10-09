@@ -5,7 +5,7 @@ module.exports = {
   },
   controller(groups, websockets) {
     this.$onChanges = (changesObj) => {
-      if (changesObj.group.currentValue) {
+      if (changesObj.group.currentValue || changesObj.user.currentValue) {
         this.clearInputs();
       }
     };
@@ -19,7 +19,7 @@ module.exports = {
     this.clearInputs = () => {
       this.messageTitle = '';
       this.messageBody = '';
-      this.messageTo = this.user.role === 'organizer' ? '' : [JSON.stringify([this.group.id, this.group.name])];
+      this.messageTo = this.user.role === 'organizer' ? [] : [JSON.stringify([this.group.id, this.group.name])];
     };
 
     this.sendMessage = () => {

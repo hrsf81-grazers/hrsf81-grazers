@@ -11,6 +11,34 @@ body, .container {
 
 .signin-form {
   background-color: #ffffff;
+  height: 400px;
+  width: 500px;
+  padding: 50px;
+}
+
+/* Event Information Component Styles */
+
+.event-info-card {
+  background-image: url('http://freedesignfile.com/upload/2014/07/Cartoon-dairy-cow-and-natural-landscapes-vector.jpg');
+  background-size: cover;
+  background-position: 0% 85%;
+  text-shadow: 0 0 3px #ffffff;
+  text-align: center;
+  height: 20%;
+}
+
+.schedule-button {
+  padding: 0;
+  margin: 0;
+}
+
+.selected {
+  background-color: #a2e9ee;
+}
+
+.schedule {
+  padding: 0;
+  padding-top: 8px;
 }
 
 .event-info-card {

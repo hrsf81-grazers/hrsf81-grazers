@@ -1,10 +1,12 @@
 <div flex layout="column" layout-align="center center" class="signin container">
-  <div layout-padding md-whiteframe="5" class="signin-form">
-    <form layout="column" layout-align="center center">
-      <h1 class="md-display-2">Welcome to Event HUD!</h1>
-      <md-select id="userSelect" required ng-model="$ctrl.user" md-on-open="$ctrl.loadUsers()" placeholder="Who are you?">
-        <md-option ng-repeat="user in $ctrl.users track by user.id" value={{user}}>{{user.firstName}} {{user.lastName}}</md-option>
-      </md-select>
+  <div layout="column" layout-align="center center" layout-padding md-whiteframe="5" class="signin-form">
+    <form flex layout="row" layout-align="end center" layout-wrap layout-padding>
+      <h1 flex="100" class="md-display-2">Please sign in.</h1>
+      <md-input-container flex="100">
+        <md-select id="userSelect" required ng-model="$ctrl.user" md-on-open="$ctrl.loadUsers()" placeholder="Who are you?">
+          <md-option ng-repeat="user in $ctrl.users track by user.id" value={{user}}>{{user.firstName}} {{user.lastName}}</md-option>
+        </md-select>
+      </md-input-container>
       <md-button class="md-accent md-raised" aria-label="Sign In" ng-click="$ctrl.signIn($ctrl.user)">Sign In</md-button>
     </form>
   </div>
