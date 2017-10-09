@@ -9,7 +9,7 @@
   </md-list>
   <md-list ng-if="$ctrl.user.role !== 'organizer'">
     <md-list-item ng-repeat="member in $ctrl.members track by member.id">
-      <p>{{member.firstName}} {{member.lastName}}<p>
+      <i class="fa fa-user-circle-o fa-lg"></i>&nbsp;<p>{{member.firstName}} {{member.lastName}}<p>
     </md-list-item>
   </md-list>
 </div>

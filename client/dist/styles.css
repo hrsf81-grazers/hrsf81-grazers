@@ -33,6 +33,50 @@ md-content {
   color: #ffffff;
 }
 
+/* Message Display Styles */
+
+.message-display-heading {
+  margin: 10px 10px 0px 10px;
+}
+
+md-list-item.md-3-line.md-long-text {
+  margin-top: 0px;
+}
+
+.message-card {
+  padding: 10px;
+}
+
+.highlight {
+  background-color: #ffdce8;
+}
+
+.message-from {
+  font-weight: bold;
+}
+
+.message-title {
+  font-size: 1.2em;
+}
+
+.message-timestamp {
+  margin: auto 10px;
+}
+
+.message-item-row {
+  margin: 10px auto;
+}
+
+.recipient {
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 5px;
+  background-color: #c9d1d5;
+  border: solid 1px transparent;
+  border-radius: 5px;
+  font-variant: small-caps;
+}
+
 /* Event Information Component Styles */
 
 .event-info-card {
