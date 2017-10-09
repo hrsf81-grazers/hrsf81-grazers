@@ -83,6 +83,10 @@ module.exports = {
       }));
       this.clearInputs();
     };
+
+    this.doSomething = () => {
+      console.log('This is a workaround');
+    };
   },
   templateUrl: 'messageSend.template.html'
 };

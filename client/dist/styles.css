@@ -78,6 +78,10 @@ md-list-item.md-3-line.md-long-text {
   font-variant: small-caps;
 }
 
+#hack {
+  display: none;
+}
+
 /* Event Information Component Styles */
 
 .event-info-card {

@@ -37,8 +37,8 @@ module.exports = {
       message.timestamp = new Date();
       const isBroadcast = this.user.role === 'organizer' && message.fromId === this.user.id;
       if (isBroadcast || message.toIds.includes(this.group.id)) {
-        console.log('message for me!');
         this.messages = this.messages.concat(message);
+        document.getElementById('hack').click();
       }
     };
 

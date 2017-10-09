@@ -9,8 +9,6 @@ function websockets() {
     this.socket.addEventListener('message', (event) => {
       if (event.data !== 'KeepAlive') {
         callback(event);
-      } else {
-        console.log('Staying alive!');
       }
     });
   };
