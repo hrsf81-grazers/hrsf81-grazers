@@ -1,15 +1,20 @@
 module.exports = {
   bindings: {
-    user: '<',
-    group: '<',
-    changeView: '<'
+    groupID: '<'
   },
   controller(groups) {
-    groups.getMembers(1)
+    const groupID = 2;
+    groups.getMembers(groupID)
       .then((groupsData) => {
         this.members = groupsData;
       })
       .catch(console.error);
+    this.clearInputs = () => {
+      this.firstName = '';
+      this.lastName = '';
+      this.email = '';
+      this.lastName = '';
+    };
   },
   templateUrl: 'manageGroup.template.html'
 };

@@ -1,8 +1,40 @@
-<div class="container col-md-7">
-  <h4 class="md-title"> Group Members</h4>
-  <md-list ng-if="$ctrl.user.role !== 'organizer'">
-    <md-list-item ng-repeat="member in $ctrl.members track by member.id">
-      <i class="fa fa-user-circle-o fa-lg"></i>&nbsp;<p>{{member.firstName}} {{member.lastName}}<p>
-    </md-list-item>
-  </md-list>
+<div flex layout="column" class="container">
+  <h3 class="md-headline message-display-heading">Group Members</h3>
+  <md-content>
+    <div flex layout="column">
+      <md-list>
+        <md-list-item ng-repeat="member in $ctrl.members track by member.id">
+          <i class="fa fa-user-circle-o fa-lg"></i>
+          &nbsp;
+          <p>{{member.firstName}} {{member.lastName}}<p>
+          <div flex layout="column">
+            <p>{{member.email}}</p>
+            <p>{{member.phone}}</p>
+          </div>
+        </md-list-item>
+      </md-list>
+    </div>
+  </md-content>
+  <md-divider></md-divider>
+  <div>
+    <form id="addUser" flex layout="column" layout-padding ng-submit="$ctrl.addUser">
+      <md-input-container>
+        <label for="new-user-first-name">New user's first name?</label>
+        <input id="new-user-first-name" autocomplete="off" ng-model="$ctrl.firstName"/>
+      </md-input-container>
+      <md-input-container>
+        <label for="new-user-last-name">New user's last name?</label>
+        <input id="new-user-last-name" autocomplete="off" ng-model="$ctrl.lastName"></input>
+      </md-input-container>
+      <md-input-container>
+        <label for="new-user-email">New user's email address?</label>
+        <input id="new-user-email" autocomplete="off" ng-model="$ctrl.email"></input>
+      </md-input-container>
+      <md-input-container>
+        <label for="new-user-phone">New user's phone number?</label>
+        <input id="new-user-phone" autocomplete="off" ng-model="$ctrl.phone"></input>
+      </md-input-container>
+      <md-button type="submit" class="md-accent md-raised">Add User</md-button>
+    </form>
+  </div>
 </div>
