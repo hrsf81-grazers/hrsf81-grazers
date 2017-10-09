@@ -3,22 +3,34 @@ module.exports = {
     user: '<',
     group: '<'
   },
-  controller(websockets) {
+  controller(websockets, $http) {
     this.messages = [];
 
-    this.displayMessage = (message) => {
-      const messageNode = document.createElement('li');
-      messageNode.className = 'message';
-
-      const messageParts = ['fromName', 'title', 'text'];
-      messageParts.forEach((part) => {
-        const messagePartNode = document.createElement('div');
-        messagePartNode.textContent = message[part];
-        messageNode.appendChild(messagePartNode);
-      });
-
-      return messageNode;
+    this.$onChanges = (changesObj) => {
+      if (changesObj.group.currentValue || changesObj.user.currentValue) {
+        this.fetchUrl = this.user.role === 'organizer' ?
+          '/messages/display/from/1' :
+          `/messages/display/to/${this.group.id}`;
+      }
+      if (this.fetchUrl) {
+        $http({
+          method: 'GET',
+          url: this.fetchUrl
+        })
+          .then(res => res.data)
+          .then((data) => {
+            console.log(data);
+            this.messages = data.map((message) => {
+              message.fromName = `${message.firstname} ${message.lastname}`;
+              message.recipients = message.togroups.split('|');
+              message.sendDate = new Date(Date.parse(message.date_time));
+              return message;
+            });
+          })
+          .catch(console.error);
+      }
     };
+
 
     this.receive = (event) => {
       console.log(`Message from the server ${event.data}`);

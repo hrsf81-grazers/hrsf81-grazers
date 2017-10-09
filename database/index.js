@@ -21,29 +21,20 @@ const addGroup = group =>
     [group.name, group.type, group.eventId, group.scheduleId]
   );
 
-const addUserToGroup = function(user, group) {
-  var groupID = pool.query('SELECT id FROM groups WHERE groups.name = $1', [group.name]);
+const addUserToGroup = (groupId, userId) =>
+  pool.query(
+    'INSERT INTO group_user(group_id, user_id) values($1, $2)',
+    [groupId, userId]
+  );
 
-  var userID = pool.query('SELECT id FROM users WHERE users.firstname = $1 AND users.lastname = $2', [user.firstname, user.lastname]);
+const addMessage = (message) => {
+  const messageInserts = message.toIds.map(recipientId =>
+    pool.query(
+      'INSERT INTO messages(from_user_id, to_group_id, title, text, event_id, date_time, msg_group_id) values($1, $2, $3, $4, $5, $6, $7)',
+      [message.fromId, recipientId, message.title, message.text, message.eventId, message.timestamp, message.msgGroupId]
+    ));
 
-  return Promise.all([groupID, userID]).then((res) =>
-
-    pool.query('INSERT INTO group_user(group_id, user_id) values($1, $2)',
-      [res[0].rows[0].id,
-      res[1].rows[0].id]));
-};
-
-const addMessage = function(fromUser, toGroup, message, event) {
-  var fromUserID = pool.query('SELECT id FROM users WHERE users.firstname = $1 AND users.lastname = $2', [fromUser.firstname, fromUser.lastname]);
-
-  var toGroupID = pool.query('SELECT id FROM groups WHERE groups.name = $1', [toGroup.name]);
-
-  var eventID = pool.query('SELECT id FROM events WHERE events.name = $1', [event.name]);
-
-  return Promise.all([fromUserID, toGroupID, eventID]).then((res) =>
-
-    pool.query('INSERT INTO messages(from_user_id, to_group_id, title, text, event_id) values($1, $2, $3, $4, $5)',
-      [res[0].rows[0].id, res[1].rows[0].id, message.title, message.text, res[2].rows[0].id]));
+  return Promise.all(messageInserts);
 };
 
 const getAllUsers = () =>
@@ -58,6 +49,17 @@ const getAllGroups = () =>
 const getAllMessages = () =>
   pool.query('SELECT * FROM messages');
 
+const getMessages = (fromId, toId) =>
+  pool.query(`SELECT firstname, lastname, string_agg(name,'|') AS togroups, title, text, date_time
+     FROM messages
+     JOIN users ON messages.from_user_id = users.id
+     ${fromId ? `AND messages.from_user_id = ${fromId}` : ''}
+     JOIN groups ON messages.to_group_id = groups.id AND messages.event_id = groups.event_id
+     ${toId ? `AND messages.to_group_id = ${toId}` : ''}
+     GROUP BY msg_group_id, title, text, firstname, lastname, from_user_id, date_time
+     ORDER BY date_time`);
+
+
 module.exports = {
   addUser,
   addEvent,
@@ -67,5 +69,6 @@ module.exports = {
   getAllUsers,
   getAllEvents,
   getAllGroups,
-  getAllMessages
+  getAllMessages,
+  getMessages
 };

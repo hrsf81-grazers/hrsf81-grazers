@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const db = require('../database/index');
 
 const app = express();
 const server = require('http').Server(app);
@@ -12,7 +13,7 @@ const bodyParser = require('body-parser');
 const event = require('./event');
 const group = require('./group');
 const user = require('./user');
-const message = require('./message');
+const messages = require('./messages');
 const schedule = require('./schedule');
 const stub = require('./stubData');
 
@@ -23,13 +24,22 @@ app.use(express.static(path.join(__dirname, '/../client/src/templates')));
 app.use('/event', event);
 app.use('/group', group);
 app.use('/user', user);
-app.use('/message', message);
+app.use('/messages', messages);
 app.use('/schedule', schedule);
 
 wss.on('connection', (ws) => {
   console.log('New client connected');
   ws.on('message', (msg) => {
     console.log(`Received ${msg}`);
+    // rest operator for destructuring objects is not yet supported in Node
+    const msgRecord = Object.assign({ timestamp: new Date() }, JSON.parse(msg));
+    delete msgRecord.fromName;
+    delete msgRecord.toNames;
+    db.addMessage(msgRecord)
+      .then(console.log)
+      .catch((err) => {
+        console.error(`ERROR: message was not saved to the DB (${err})`);
+      });
     wss.clients.forEach((client) => {
       if (client.readyState === WebSocket.OPEN) {
         client.send(msg);
@@ -53,10 +63,6 @@ app.get('/groups', (req, res) => {
 
 app.get('/users', (req, res) => {
   res.status(200).send(stub.users);
-});
-
-app.get('/messages', (req, res) => {
-  res.status(200).send(stub.messages);
 });
 
 // send back to client for route handling
