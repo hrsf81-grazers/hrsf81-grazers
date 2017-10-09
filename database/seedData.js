@@ -11,12 +11,6 @@ module.exports = {
 
   groups: [
     {
-      name: 'Organizers',
-      type: 'admin',
-      eventId: 1,
-      scheduleId: 3
-    },
-    {
       name: 'Greeters',
       type: 'staff',
       eventId: 1,
@@ -40,14 +34,15 @@ module.exports = {
     }
   ],
 
+  organizer: {
+    role: 'organizer',
+    firstName: 'Laurent',
+    lastName: 'Frazier',
+    email: 'laurent@grazerscon.com',
+    phone: '555-235-9802'
+  },
+
   users: [
-    {
-      role: 'organizer',
-      firstName: 'Laurent',
-      lastName: 'Frazier',
-      email: 'laurent@grazerscon.com',
-      phone: '555-235-9802'
-    },
     {
       role: 'staff',
       firstName: 'David',
@@ -87,10 +82,6 @@ module.exports = {
 
   userGroups: [
     {
-      groupId: 1,
-      userId: 1
-    },
-    {
       groupId: 2,
       userId: 3
     },
@@ -119,7 +110,8 @@ module.exports = {
       title: '',
       text: 'I just signed in for lemonade stand duty and we are out of lemons!',
       eventId: 1,
-      timestamp: new Date()
+      timestamp: new Date(),
+      msgGroupId: 1
     },
     {
       fromId: 1,
@@ -127,7 +119,8 @@ module.exports = {
       title: 'Room Change',
       text: 'The "Guilt-Free Grazing" seminar has moved from the Grand Ballroom to the Autumm room.',
       eventId: 1,
-      timestamp: new Date()
+      timestamp: new Date(),
+      msgGroupId: 2
     },
     {
       fromId: 1,
@@ -135,7 +128,8 @@ module.exports = {
       title: 'Room Change',
       text: 'The "Guilt-Free Grazing" seminar has moved from the Grand Ballroom to the Autumm room.',
       eventId: 1,
-      timestamp: new Date()
+      timestamp: new Date(),
+      msgGroupId: 2
     },
     {
       fromId: 1,
@@ -143,7 +137,8 @@ module.exports = {
       title: 'Welcome!',
       text: 'Post your memories to Instagram with hashtag #GrazerCon2017. Daily prizes for best photo!',
       eventId: 1,
-      timestamp: new Date()
+      timestamp: new Date(),
+      msgGroupId: 3
     }
   ]
 };

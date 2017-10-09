@@ -113,49 +113,6 @@ module.exports = {
     }
   ],
 
-  messages: [
-    {
-      id: 1,
-      fromUserId: 3,
-      toGroupId: 2,
-      title: '',
-      text: 'I just signed in for lemonade stand duty and we are out of lemons!',
-      eventId: 1
-    },
-    {
-      id: 2,
-      fromUserId: 1,
-      toGroupId: 1,
-      title: 'Room Change',
-      text: 'The "Guilt-Free Grazing" seminar has moved from the Grand Ballroom to the Autumm room.',
-      eventId: 1
-    },
-    {
-      id: 2,
-      fromUserId: 1,
-      toGroupId: 2,
-      title: 'Room Change',
-      text: 'The "Guilt-Free Grazing" seminar has moved from the Grand Ballroom to the Autumm room.',
-      eventId: 1
-    },
-    {
-      id: 2,
-      fromUserId: 1,
-      toGroupId: 3,
-      title: 'Room Change',
-      text: 'The "Guilt-Free Grazing" seminar has moved from the Grand Ballroom to the Autumm room.',
-      eventId: 1
-    },
-    {
-      id: 3,
-      fromUserId: 1,
-      toGroupId: 4,
-      title: 'Welcome!',
-      text: 'Post your memories to Instagram with hashtag #GrazerCon2017. Daily prizes for best photo!',
-      eventId: 1
-    }
-  ],
-
   schedules: [
     {
       id: 1,

@@ -13,7 +13,7 @@ const bodyParser = require('body-parser');
 const event = require('./event');
 const group = require('./group');
 const user = require('./user');
-const message = require('./message');
+const messages = require('./messages');
 const schedule = require('./schedule');
 const stub = require('./stubData');
 
@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, '/../client/src/templates')));
 app.use('/event', event);
 app.use('/group', group);
 app.use('/user', user);
-app.use('/message', message);
+app.use('/messages', messages);
 app.use('/schedule', schedule);
 
 wss.on('connection', (ws) => {
@@ -63,10 +63,6 @@ app.get('/groups', (req, res) => {
 
 app.get('/users', (req, res) => {
   res.status(200).send(stub.users);
-});
-
-app.get('/messages', (req, res) => {
-  res.status(200).send(stub.messages);
 });
 
 // send back to client for route handling
