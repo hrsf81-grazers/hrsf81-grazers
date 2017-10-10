@@ -55,8 +55,8 @@ npm install
 
 ### Roadmap
 
-View the project roadmap [here](LINK_TO_DOC)
-
+View the project roadmap [here](https://docs.google.com/document/d/1TBVDMC1pwE-sTXAPrfi6eNgeuo4SmaHQXcmDlneldVE/edit#)
+The App plan doc is [here](https://docs.google.com/document/d/1TBVDMC1pwE-sTXAPrfi6eNgeuo4SmaHQXcmDlneldVE/edit#)
 
 ## Contributing
 
