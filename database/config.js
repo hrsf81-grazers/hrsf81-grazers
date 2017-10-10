@@ -1,7 +1,7 @@
 // The following was used in dev
 // const config = {
 //   user: 'a_grazer',
-//   host: process.env.DATABASE_URL || 'localhost',
+//   host: 'localhost',
 //   database: 'event_hud',
 //   password: null,
 //   port: 5432,
