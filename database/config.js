@@ -1,6 +1,6 @@
 const config = {
   user: 'a_grazer',
-  host: 'localhost',
+  host: process.env.DATABASE_URL || 'localhost',
   database: 'event_hud',
   password: null,
   port: 5432,
