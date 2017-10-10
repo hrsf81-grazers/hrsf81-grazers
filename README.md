@@ -55,7 +55,9 @@ npm install
 
 ### Roadmap
 
-View the project roadmap [here](https://docs.google.com/document/d/1TBVDMC1pwE-sTXAPrfi6eNgeuo4SmaHQXcmDlneldVE/edit#)
+View the project roadmap [here](https://drive.google.com/open?id=1k0lQECE05GhPnwK_uDIykap6wmfrCul8UVmNWVbDJOI)
+
+User Stories [here](https://drive.google.com/open?id=1lJ-JmssfHyuUQyLMLJr33_QG-klgLbcOboi-hXYw_08)
 
 ## Supporting Documentation
 [MVP App Architecture Diagram](https://drive.google.com/open?id=0B3EBfo09e2PfY1g0eGZEZEN2TWM)
