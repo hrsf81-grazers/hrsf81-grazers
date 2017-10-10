@@ -43,7 +43,7 @@ You will need to have Postgres installed and the server running with the "event_
 
 ```
 node database/setup.js
-```
+``` 
 
 ### Installing Dependencies
 
@@ -55,8 +55,8 @@ npm install
 
 ### Roadmap
 
-View the project roadmap [here](https://docs.google.com/document/d/1TBVDMC1pwE-sTXAPrfi6eNgeuo4SmaHQXcmDlneldVE/edit#)
-The App plan doc is [here](https://docs.google.com/document/d/1TBVDMC1pwE-sTXAPrfi6eNgeuo4SmaHQXcmDlneldVE/edit#)
+View the project roadmap [here].(https://docs.google.com/document/d/1TBVDMC1pwE-sTXAPrfi6eNgeuo4SmaHQXcmDlneldVE/edit#)
+The App plan doc is [here].(https://docs.google.com/document/d/1TBVDMC1pwE-sTXAPrfi6eNgeuo4SmaHQXcmDlneldVE/edit#)
 
 ## Contributing
 
