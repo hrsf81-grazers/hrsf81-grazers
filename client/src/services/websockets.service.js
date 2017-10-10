@@ -1,5 +1,6 @@
 function websockets() {
-  this.socket = new WebSocket(`ws://${window.location.host}/`);
+  const HOST = window.location.origin.replace(/^http/, 'ws');
+  this.socket = new WebSocket(HOST);
 
   this.send = (message) => {
     this.socket.send(message);
